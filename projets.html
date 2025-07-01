@@ -6,6 +6,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+		<style>
+              code {
+                   background-color: #eee; /* Un fond gris clair */
+                   border-radius: 4px;     /* Des bords arrondis */
+                   padding: 2px 6px;       /* Un peu d'espace intérieur */
+                   font-family: 'Courier New', Courier, monospace; /* Police de code */
+                   font-size: 0.9em;       /* Légèrement plus petit que le texte normal */
+                   border: 1px solid #ddd; /* Une bordure discrète */
+                   }
+        </style>
 	</head>
 	<body class="is-preload">
 
@@ -42,11 +52,11 @@
 
                                 <p><strong>Démarche et Compétences Mises en Œuvre :</strong></p>
                                 <ol>
-                                <li><strong>Configuration de l'Environnement :</strong> J'ai déployé deux machines virtuelles sous Oracle VirtualBox. La machine attaquante est une installation de **Kali Linux**, et la cible une machine **Metasploitable2**, connue pour ses vulnérabilités pédagogiques.</li>
-                                <li><strong>Isolation Réseau :</strong> Pour garantir la sécurité, j'ai configuré les deux VMs sur un **Réseau Interne** dédié, avec un adressage IP statique (`192.168.56.0/24`), les coupant ainsi de tout accès extérieur.</li>
-                                <li><strong>Phase de Reconnaissance :</strong> Depuis Kali, j'ai utilisé **Nmap** pour scanner la machine cible. Le scan a révélé plusieurs services ouverts, dont le serveur FTP vulnérable **`vsftpd 2.3.4`** sur le port 21.</li>
-                                <li><strong>Phase d'Exploitation :</strong> J'ai ensuite utilisé le **Metasploit Framework** (`msfconsole`) pour rechercher, configurer et lancer l'exploit `exploit/unix/ftp/vsftpd_234_backdoor` ciblant cette vulnérabilité spécifique.</li>
-                                <li><strong>Résultat :</strong> L'exploitation a réussi, me donnant un **shell avec les privilèges `root`** sur la machine Metasploitable, validant ainsi la réussite complète du cycle de test d'intrusion.</li>
+                                <li><strong>Configuration de l'Environnement :</strong> J'ai déployé deux machines virtuelles sous <strong>Oracle VirtualBox</strong>. La machine attaquante est une installation de <strong>Kali Linux</strong>, et la cible une machine <strong>Metasploitable2</strong>, connue pour ses vulnérabilités pédagogiques.</li>
+                                <li><strong>Isolation Réseau :</strong> Pour garantir la sécurité, j'ai configuré les deux VMs sur un <strong>Réseau Interne</strong> dédié, avec un adressage IP statique (<code>192.168.56.0/24</code>), les coupant ainsi de tout accès extérieur.</li>
+                                <li><strong>Phase de Reconnaissance :</strong> Depuis Kali, j'ai utilisé <strong>Nmap</strong> pour scanner la machine cible. Le scan a révélé plusieurs services ouverts, dont le serveur FTP vulnérable <code>vsftpd 2.3.4</code> sur le port 21.</li>
+                                <li><strong>Phase d'Exploitation :</strong> J'ai ensuite utilisé le <strong>Metasploit Framework</strong> (<code>msfconsole</code>) pour rechercher, configurer et lancer l'exploit <code>exploit/unix/ftp/vsftpd_234_backdoor</code> ciblant cette vulnérabilité spécifique.</li>
+                                <li><strong>Résultat :</strong> L'exploitation a réussi, me donnant un <strong>shell</strong> avec les privilèges <code>root</code> sur la machine Metasploitable, validant ainsi la réussite complète du cycle de test d'intrusion.</li>
                                 </ol>
                                 <p><strong>Outils Maîtrisés :</strong> VirtualBox, Kali Linux, Nmap, Metasploit Framework, Ligne de commande Bash.</p>
 
