@@ -33,12 +33,22 @@
 								<p>Voici une sélection de projets personnels qui démontrent ma démarche d'apprentissage actif et mon intérêt pour la cybersécurité pratique. Chaque projet est une opportunité pour moi d'appliquer des concepts théoriques à des cas concrets.</p>
 								<hr />
 								
-								<!-- Projet 1 : Home Lab -->
-								<h3>Projet 1 : Mise en Place d'un Laboratoire de Test (Home Lab)</h3>
-								<span class="image left"><img src="images/projet-lab.jpg" alt="Schéma d'un laboratoire virtuel" /></span>
-                                <p><strong>Objectif :</strong> Créer un environnement virtualisé et isolé pour m'entraîner légalement à la détection et à l'analyse de vulnérabilités. Ce laboratoire est la fondation de mon apprentissage pratique.</p>
-                                <p><strong>Description :</strong> J'ai utilisé VirtualBox pour déployer plusieurs machines virtuelles en réseau : une machine attaquante (Kali Linux), une machine serveur vulnérable (Metasploitable) et une machine cliente (Windows). Ce setup me permet de simuler des scénarios d'attaque, de tester des configurations de pare-feu et d'analyser les flux réseau avec des outils comme Wireshark.</p>
-                                <p><strong>Outils utilisés :</strong> VirtualBox, Kali Linux, Metasploitable, Windows Server.</p>
+								<!-- Projet 1 : Laboratoire de Pentesting & Exploitation -->
+                                <h3>Projet 1 : Mise en Place et Exploitation d'un Laboratoire de Pentesting</h3>
+                                <span class="image left"><img src="images/labo-cyber.png" alt="Laboratoire de Pentesting en action" /></span>
+                                <!-- N'oubliez pas de mettre une capture d'écran de votre labo dans le dossier images sous le nom labo-cyber.png -->
+
+                                <p><strong>Objectif :</strong> Construire un environnement virtualisé, isolé et sécurisé pour mener un test d'intrusion complet, de la reconnaissance initiale à l'obtention d'un accès administrateur sur une machine cible.</p>
+
+                                <p><strong>Démarche et Compétences Mises en Œuvre :</strong></p>
+                                <ol>
+                                <li><strong>Configuration de l'Environnement :</strong> J'ai déployé deux machines virtuelles sous Oracle VirtualBox. La machine attaquante est une installation de **Kali Linux**, et la cible une machine **Metasploitable2**, connue pour ses vulnérabilités pédagogiques.</li>
+                                <li><strong>Isolation Réseau :</strong> Pour garantir la sécurité, j'ai configuré les deux VMs sur un **Réseau Interne** dédié, avec un adressage IP statique (`192.168.56.0/24`), les coupant ainsi de tout accès extérieur.</li>
+                                <li><strong>Phase de Reconnaissance :</strong> Depuis Kali, j'ai utilisé **Nmap** pour scanner la machine cible. Le scan a révélé plusieurs services ouverts, dont le serveur FTP vulnérable **`vsftpd 2.3.4`** sur le port 21.</li>
+                                <li><strong>Phase d'Exploitation :</strong> J'ai ensuite utilisé le **Metasploit Framework** (`msfconsole`) pour rechercher, configurer et lancer l'exploit `exploit/unix/ftp/vsftpd_234_backdoor` ciblant cette vulnérabilité spécifique.</li>
+                                <li><strong>Résultat :</strong> L'exploitation a réussi, me donnant un **shell avec les privilèges `root`** sur la machine Metasploitable, validant ainsi la réussite complète du cycle de test d'intrusion.</li>
+                                </ol>
+                                <p><strong>Outils Maîtrisés :</strong> VirtualBox, Kali Linux, Nmap, Metasploit Framework, Ligne de commande Bash.</p>
 
                                 <div style="clear:both;"></div>
                                 <hr />
