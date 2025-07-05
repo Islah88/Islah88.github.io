@@ -44,57 +44,60 @@
 								<hr />
 								
 								<!-- Projet 1 : Étude de Cas Complète - De la Création du Labo à l'Intrusion -->
-                                <h3>Projet 1 : Étude de Cas Complète - Intrusion en Environnement Contrôlé</h3>
-                                <span class="image left"><img src="images/projet-distcc.png" alt="Capture d'écran de l'exploitation Metasploit" /></span>
-                                <!-- NOTE : Mettez votre capture d'écran du succès de l'exploit dans /images/projet-distcc.png -->
+<h3>Projet 1 : Étude de Cas Complète - Intrusion en Environnement Contrôlé</h3>
+<p>Ce projet illustre l'intégralité d'un cycle de test d'intrusion, depuis la construction d'un laboratoire sécurisé jusqu'à l'exploitation d'une vulnérabilité ciblée. L'objectif est de démontrer une maîtrise méthodologique des outils et des concepts fondamentaux du hacking éthique.</p>
 
-                                <p><strong>Contexte et Objectif :</strong> Ce projet illustre l'intégralité d'un cycle de test d'intrusion, depuis la construction d'un laboratoire sécurisé jusqu'à l'exploitation d'une vulnérabilité ciblée. L'objectif est de démontrer une maîtrise méthodologique des outils et des concepts fondamentaux du hacking éthique.</p>
+<hr style="margin: 2em 0;">
 
-                                <hr style="margin: 2em 0;">
+<h4>Partie 1 : Construction du Laboratoire de Pentesting</h4>
+<span class="image left"><img src="images/labo-cyber.png" alt="Schéma du laboratoire virtuel" /></span>
+<!-- NOTE : Mettez une image/schéma de votre labo ici -->
+<p>La première étape indispensable a été de créer un environnement de travail isolé pour mener mes expériences sans aucun risque.
+<ul>
+    <li><strong>Virtualisation :</strong> J'ai utilisé <strong>Oracle VirtualBox</strong> pour déployer deux machines virtuelles : une machine attaquante <strong>Kali Linux</strong> et une machine cible <strong>Metasploitable2</strong>.</li>
+    <li><strong>Isolation Réseau :</strong> Les deux VMs ont été configurées sur un <strong>"Réseau Interne"</strong> (<code>intnet</code>), créant un réseau local virtuel totalement coupé du monde extérieur pour une sécurité maximale.</li>
+</ul>
+</p>
+<div style="clear: both;"></div> <!-- Force le texte suivant à passer sous l'image -->
 
-                                <h4>Partie 1 : Construction du Laboratoire de Pentesting</h4>
-                                <p>La première étape indispensable a été de créer un environnement de travail isolé et sécurisé pour mener mes expériences sans aucun risque pour mon réseau local ou pour Internet.</p>
-                                <ul>
-                                <li><strong>Virtualisation :</strong> J'ai utilisé <strong>Oracle VirtualBox</strong> pour déployer deux machines virtuelles distinctes.</li>
-                                <li><strong>Machine Attaquante :</strong> Une installation standard de <strong>Kali Linux</strong>, la distribution de référence pour les tests d'intrusion.</li>
-                                <li><strong>Machine Cible :</strong> Une machine <strong>Metasploitable2</strong>, conçue spécifiquement pour l'apprentissage avec ses vulnérabilités connues.</li>
-                                <li><strong>Isolation Réseau :</strong> Les deux machines ont été configurées sur un <strong>"Réseau Interne"</strong> (<code>intnet</code>) de VirtualBox. Cette configuration crée un réseau local virtuel totalement coupé du monde extérieur, garantissant une sécurité maximale.</li>
-                                </ul>
 
-                                <hr style="margin: 2em 0;">
+<hr style="margin: 2em 0;">
 
-                                <h4>Partie 2 : Déroulement du Test d'Intrusion (Write-up)</h4>
-                                <p>Une fois le laboratoire opérationnel, j'ai procédé à l'attaque en suivant une méthodologie structurée.</p>
-                                <ol>
-                                <li>
-                                <strong>Reconnaissance & Énumération :</strong>
-                                <p>Un scan Nmap approfondi (<code>nmap -sV -p- 192.168.56.11</code>) a révélé un service <code>distcc v1</code> sur le port 3632, une porte d'entrée potentielle connue pour sa vulnérabilité d'exécution de code à distance (RCE).</p>
-                                </li>
-                                <li>
-                                <strong>Exploitation avec Metasploit et Résolution de Problème :</strong>
-                                <p>J'ai utilisé le module <code>exploit/unix/misc/distcc_exec</code> de Metasploit. Après un premier échec dû à un payload incompatible, j'ai analysé les options disponibles et sélectionné <code>cmd/unix/reverse_perl</code>, un payload plus robuste qui établit une connexion inversée de la victime vers ma machine Kali.</p>
-                                </li>
-                                <li>
-                                <strong>Résultat & Accès Initial :</strong>
-                                <p>Après configuration des adresses <code>RHOSTS</code> et <code>LHOST</code>, l'exploitation a réussi. J'ai obtenu un shell sur la machine cible avec les privilèges de l'utilisateur <code>daemon</code>, marquant ainsi le succès de la phase d'intrusion et la première étape avant une potentielle escalade de privilèges.</p>
-                                </li>
-                                </ol>
+<h4>Partie 2 : Déroulement du Test d'Intrusion (Write-up)</h4>
+<span class="image right"><img src="images/projet-distcc.png" alt="Capture d'écran de l'exploitation Metasploit" /></span>
+<!-- NOTE : Mettez votre capture d'écran du succès de l'exploit ici -->
+<p>Une fois le laboratoire opérationnel, j'ai procédé à l'attaque en suivant une méthodologie structurée.</p>
+<ol style="margin-left: 20px;"> <!-- Ajout d'un style pour un meilleur alignement -->
+    <li>
+        <strong>Reconnaissance & Énumération :</strong>
+        <p>Un scan Nmap (<code>nmap -sV</code>) a révélé un service <code>distcc v1</code> vulnérable sur le port 3632, connu pour une faille d'exécution de code à distance (RCE).</p>
+    </li>
+    <li>
+        <strong>Exploitation et Résolution de Problème :</strong>
+        <p>J'ai utilisé le module <code>exploit/unix/misc/distcc_exec</code> de Metasploit. Face à un échec du payload par défaut, j'ai sélectionné un payload plus fiable (<code>cmd/unix/reverse_perl</code>) pour établir une connexion inversée.</p>
+    </li>
+    <li>
+        <strong>Résultat & Accès Initial :</strong>
+        <p>Après configuration (<code>RHOSTS</code>, <code>LHOST</code>), l'exploitation a réussi, me donnant un shell avec les privilèges de l'utilisateur <code>daemon</code>, marquant le succès de la phase d'intrusion.</p>
+    </li>
+</ol>
+<div style="clear: both;"></div> <!-- Force le texte suivant à passer sous l'image -->
 
-                                <hr style="margin: 2em 0;">
 
-                                <p>
-                                <strong>Compétences Transversales Démontrées :</strong>
-                                <br>
-                                <code>Virtualisation (VirtualBox)</code>
-                                <code>Configuration Réseau</code>
-                                <code>Nmap (Scanning)</code>
-                                <code>Metasploit Framework</code>
-                                <code>Analyse de Vulnérabilités</code>
-                                <code>Résolution de Problèmes</code>
-                                </p>
+<hr style="margin: 2em 0;">
 
-                                <div style="clear:both;"></div>
-                                <hr />
+<p>
+    <strong>Compétences Transversales Démontrées :</strong>
+    <br>
+    <code>Virtualisation (VirtualBox)</code>
+    <code>Configuration Réseau</code>
+    <code>Nmap (Scanning)</code>
+    <code>Metasploit Framework</code>
+    <code>Analyse de Vulnérabilités</code>
+    <code>Résolution de Problèmes</code>
+</p>
+
+<hr />
 
                                 <!-- Projet 2 : Analyse de Logs -->
                                 <h3>Projet 2 : Analyse de Logs de Sécurité</h3>
