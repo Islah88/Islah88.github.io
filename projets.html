@@ -104,16 +104,46 @@
 
 <hr />
 
-                                <!-- Projet 2 : Analyse de Logs -->
-                                <h3>Projet 2 : Analyse de Logs de Sécurité</h3>
-                                <span class="image right"><img src="images/projet-logs.jpg" alt="Graphique d'analyse de logs" /></span>
-                                <p><strong>Objectif :</strong> Appliquer mes compétences en analyse de données (issues de mon Master MIASHS) à une problématique de cybersécurité.</p>
-								<p><strong>Description :</strong> En utilisant un jeu de données public de logs de serveur web, j'ai développé des scripts pour parser et analyser les informations. Le but était d'identifier des anomalies telles que des tentatives de connexion par force brute, des balayages de ports ou des requêtes suspectes (injections SQL). Ce projet m'a permis de comprendre l'importance de l'analyse de logs dans la détection d'incidents.</p>
-                                <p><strong>Outils utilisés :</strong> Excel pour une première analyse, Python (librairie Pandas) pour le traitement avancé.</p>
-    
-                                <div style="clear:both;"></div>
-                                <hr />
+                               <!-- Projet 2 : Analyse de Données Appliquée à la Cybersécurité -->
+<h3>Projet 2 : Détection d'Anomalies par l'Analyse de Logs de Serveur Web</h3>
+<span class="image right"><img src="images/projet-logs.png" alt="Exemple de tableau de bord d'analyse de logs" /></span>
+<!-- NOTE : Mettez une capture d'écran d'un graphique ou d'un tableau pertinent sous /images/projet-logs.png -->
 
+<p><strong>Objectif :</strong> Mettre en application mon double profil en utilisant les techniques d'analyse de données de mon Master MIASHS pour résoudre un problème de cybersécurité : la détection d'activités malveillantes dans un grand volume de logs.</p>
+
+<p><strong>Démarche et Résultats :</strong></p>
+<p>À partir d'un jeu de données public de logs de serveur Apache, ma méthodologie s'est déroulée en quatre étapes clés :</p>
+<ol>
+    <li>
+        <strong>Parsing et Structuration :</strong>
+        <p>La première étape a consisté à écrire un script Python pour "parser" chaque ligne de log et extraire les informations clés (IP, date, requête, code statut, etc.) dans un tableau de données structuré.</p>
+    </li>
+    <li>
+        <strong>Analyse Statistique et Détection de Signaux Faibles :</strong>
+        <p>J'ai ensuite analysé les données pour identifier des anomalies. J'ai notamment pu détecter :</p>
+        <ul>
+            <li>Des tentatives de <strong>force brute</strong> sur des pages d'authentification (pics d'erreurs 401 depuis certaines IP).</li>
+            <li>Des <strong>scans de vulnérabilités</strong> (grand nombre d'erreurs 404 depuis les mêmes sources).</li>
+            <li>Des tentatives d'<strong>injection de code</strong> (présence de motifs SQL ou XSS dans les URLs des requêtes).</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Visualisation des Données (Data Viz) :</strong>
+        <p>Pour synthétiser mes résultats, j'ai créé plusieurs visualisations, dont un tableau de bord présentant le top 10 des adresses IP suspectes et un graphique montrant l'évolution des attaques dans le temps.</p>
+    </li>
+</ol>
+<p>
+    <strong>Compétences Démontrées :</strong>
+    <code>Analyse de Données</code>,
+    <code>Python (Pandas)</code>,
+    <code>Analyse de Logs</code>,
+    <code>Data Visualization</code>,
+    <code>Détection d'Incidents</code>,
+    <code>Threat Hunting</code>.
+</p>
+
+<div style="clear:both;"></div>
+<hr />
 								 <!-- Projet 3 : CTF -->
                                 <h3>Projet 3 : Challenges Capture The Flag (CTF)</h3>
                                 <span class="image left"><img src="images/projet-ctf.png" alt="Profil de la plateforme Root-Me" /></span>
