@@ -129,8 +129,50 @@
 </p>
 
 <hr />
-                               <!-- Projet 2 : Analyse de Données Appliquée à la Cybersécurité -->
-<h3>Projet 2 : Détection d'Anomalies par l'Analyse de Logs de Serveur Web</h3>
+<!-- ======================= PROJET HONEYPOT (À INSÉRER) ======================= -->
+<hr />
+
+<h3>Projet 2 : Déploiement d'un Honeypot et Analyse des Attaques en Temps Réel</h3>
+<span class="image right"><img src="images/projet-honeypot.png" alt="Dashboard Kibana montrant la carte des attaques" /></span>
+<!-- NOTE : Mettez votre capture d'écran du dashboard Kibana ici -->
+
+<p><strong>Objectif :</strong> Mettre en place une infrastructure de détection active (un "pot de miel") pour attirer, capturer et analyser les techniques des attaquants automatisés qui scannent Internet en permanence. Ce projet m'a permis de passer de la simulation d'attaques à l'observation de menaces réelles.</p>
+
+<p><strong>Démarche et Résultats :</strong></p>
+<ol>
+    <li>
+        <strong>Déploiement sur le Cloud :</strong>
+        <p>J'ai déployé un serveur dédié sur une instance <strong>Ubuntu 22.04</strong> chez Scaleway. L'infrastructure a été sécurisée en déplaçant le port SSH administratif sur un port non standard afin d'éviter tout conflit et de garantir un accès stable.</p>
+    </li>
+    <li>
+        <strong>Installation de T-Pot (The All-In-One Honeypot) :</strong>
+        <p>J'ai installé la suite T-Pot via <strong>Docker</strong>. Cette plateforme déploie plus de 20 honeypots différents (SSH, Telnet, web, SMB...) et intègre la pile <strong>ELK (Elasticsearch, Logstash, Kibana)</strong> pour l'agrégation et la visualisation des logs.</p>
+    </li>
+    <li>
+        <strong>Analyse et Visualisation en Direct :</strong>
+        <p>Grâce au dashboard <strong>Kibana</strong>, j'ai pu observer et analyser en temps réel les données collectées. En quelques heures seulement, le système a enregistré des centaines de tentatives d'intrusion, me permettant d'identifier :</p>
+        <ul>
+            <li>Le <strong>Top 10 des pays</strong> sources d'attaques.</li>
+            <li>Les <strong>identifiants et mots de passe</strong> les plus fréquemment utilisés lors des attaques par force brute sur SSH.</li>
+            <li>Les <strong>types de services</strong> les plus ciblés par les bots.</li>
+        </ul>
+    </li>
+</ol>
+<p>
+    <strong>Compétences Démontrées :</strong>
+    <code>Administration Système (Linux)</code>,
+    <code>Gestion Cloud (Scaleway)</code>,
+    <code>Docker</code>,
+    <code>Sécurité Réseau (Pare-feu)</code>,
+    <code>Analyse de Logs (ELK Stack)</code>,
+    <code>Threat Intelligence</code>.
+</p>
+
+<div style="clear:both;"></div>
+<hr />
+<!-- ========================================================================= -->
+                               <!-- Projet 3 : Analyse de Données Appliquée à la Cybersécurité -->
+<h3>Projet 3 : Détection d'Anomalies par l'Analyse de Logs de Serveur Web</h3>
 <span class="image right"><img src="images/projet-logs.png" alt="Exemple de tableau de bord d'analyse de logs" /></span>
 <!-- NOTE : Mettez une capture d'écran d'un graphique ou d'un tableau pertinent sous /images/projet-logs.png -->
 
@@ -169,8 +211,8 @@
 
 <div style="clear:both;"></div>
 <hr />
-							<!-- Projet 3 : CTF et Veille Technique Continue -->
-<h3>Projet 3 : Apprentissage Continu via Challenges (CTF)</h3>
+							<!-- Projet 4 : CTF et Veille Technique Continue -->
+<h3>Projet 4 : Apprentissage Continu via Challenges (CTF)</h3>
 <span class="image left"><img src="images/projet-ctf.png" alt="Profil de la plateforme Root-Me" /></span>
 <!-- NOTE : Mettez votre capture d'écran de profil Root-Me ici -->
 
