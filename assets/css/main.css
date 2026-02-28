@@ -99,11 +99,11 @@ input, select, textarea {
 	}
 
 	body {
-		background-color: #935d8c;
-		background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
-		background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
-		background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
-		background-image: url("images/overlay.png"), linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+		background-color: #0f111a;
+		background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #0a192f 15%, #112240 85%);
+		background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #0a192f 15%, #112240 85%);
+		background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #0a192f 15%, #112240 85%);
+		background-image: url("images/overlay.png"), linear-gradient(45deg, #0a192f 15%, #112240 85%);
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -120,7 +120,7 @@ input, select, textarea {
 /* Type */
 
 	body {
-		background-color: #935d8c;
+		background-color: #0f111a;
 		color: rgba(255, 255, 255, 0.65);
 	}
 
@@ -1957,7 +1957,7 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #8cc9f0;
+			background-color: #00e5ff;
 			color: #ffffff !important;
 			box-shadow: none;
 		}
@@ -1967,7 +1967,7 @@ input, select, textarea {
 			input[type="button"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background-color: #9acff2;
+				background-color: #00e5ff;
 			}
 
 			input[type="submit"].primary:active,
@@ -1975,7 +1975,7 @@ input, select, textarea {
 			input[type="button"].primary:active,
 			button.primary:active,
 			.button.primary:active {
-				background-color: #7ec3ee;
+				background-color: #00b8d4;
 			}
 
 			input[type="submit"].primary.icon:before,
@@ -2157,8 +2157,8 @@ input, select, textarea {
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #8cc9f0;
-			box-shadow: 0 0 0 1px #8cc9f0;
+			border-color: #00e5ff;
+			box-shadow: 0 0 0 1px #00e5ff;
 		}
 
 	select {
@@ -2167,7 +2167,7 @@ input, select, textarea {
 
 		select option {
 			color: #ffffff;
-			background: #935d8c;
+			background: #0f111a;
 		}
 
 	input[type="checkbox"] + label,
@@ -2185,13 +2185,13 @@ input, select, textarea {
 	input[type="radio"]:checked + label:before {
 		background-color: #ffffff;
 		border-color: #ffffff;
-		color: #935d8c;
+		color: #0f111a;
 	}
 
 	input[type="checkbox"]:focus + label:before,
 	input[type="radio"]:focus + label:before {
-		border-color: #8cc9f0;
-		box-shadow: 0 0 0 1px #8cc9f0;
+		border-color: #00e5ff;
+		box-shadow: 0 0 0 1px #00e5ff;
 	}
 
 	::-webkit-input-placeholder {
@@ -2291,15 +2291,15 @@ input, select, textarea {
 			}
 
 		.icon.style1 {
-			color: #efa8b0;
+			color: #00d2ff;
 		}
 
 		.icon.style2 {
-			color: #c79cc8;
+			color: #4169e1;
 		}
 
 		.icon.style3 {
-			color: #a89cc8;
+			color: #1e90ff;
 		}
 
 		.icon.style4 {
@@ -2307,7 +2307,7 @@ input, select, textarea {
 		}
 
 		.icon.style5 {
-			color: #8cc9f0;
+			color: #00e5ff;
 		}
 
 		@media screen and (max-width: 1680px) {
@@ -2884,15 +2884,15 @@ input, select, textarea {
 		}
 
 			.statistics li.style1 {
-				background-color: #efa8b0;
+				background-color: #00d2ff;
 			}
 
 			.statistics li.style2 {
-				background-color: #c79cc8;
+				background-color: #4169e1;
 			}
 
 			.statistics li.style3 {
-				background-color: #a89cc8;
+				background-color: #1e90ff;
 			}
 
 			.statistics li.style4 {
@@ -2900,7 +2900,7 @@ input, select, textarea {
 			}
 
 			.statistics li.style5 {
-				background-color: #8cc9f0;
+				background-color: #00e5ff;
 			}
 
 			.statistics li strong, .statistics li b {
@@ -3216,7 +3216,7 @@ input, select, textarea {
 		-ms-transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
 		transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
 		background-color: #ffffff;
-		color: #636363;
+		color: #4a5568;
 		position: absolute;
 		width: 64em;
 		max-width: calc(100% - 4em);
@@ -3229,32 +3229,32 @@ input, select, textarea {
 	}
 
 		#nav input, #nav select, #nav textarea {
-			color: #636363;
+			color: #4a5568;
 		}
 
 		#nav a:hover {
-			color: #636363;
+			color: #4a5568;
 		}
 
 		#nav strong, #nav b {
-			color: #636363;
+			color: #4a5568;
 		}
 
 		#nav h1, #nav h2, #nav h3, #nav h4, #nav h5, #nav h6 {
-			color: #636363;
+			color: #4a5568;
 		}
 
 		#nav blockquote {
-			border-left-color: #dddddd;
+			border-left-color: #a0aec0;
 		}
 
 		#nav code {
 			background: rgba(222, 222, 222, 0.25);
-			border-color: #dddddd;
+			border-color: #a0aec0;
 		}
 
 		#nav hr {
-			border-bottom-color: #dddddd;
+			border-bottom-color: #a0aec0;
 		}
 
 		#nav + #main {
@@ -3335,41 +3335,41 @@ input, select, textarea {
 
 	#main {
 		background-color: #ffffff;
-		color: #636363;
+		color: #4a5568;
 		border-radius: 0.25em;
 	}
 
 		#main input, #main select, #main textarea {
-			color: #636363;
+			color: #4a5568;
 		}
 
 		#main a:hover {
-			color: #636363;
+			color: #4a5568;
 		}
 
 		#main strong, #main b {
-			color: #636363;
+			color: #4a5568;
 		}
 
 		#main h1, #main h2, #main h3, #main h4, #main h5, #main h6 {
-			color: #636363;
+			color: #4a5568;
 		}
 
 		#main blockquote {
-			border-left-color: #dddddd;
+			border-left-color: #a0aec0;
 		}
 
 		#main code {
 			background: rgba(222, 222, 222, 0.25);
-			border-color: #dddddd;
+			border-color: #a0aec0;
 		}
 
 		#main hr {
-			border-bottom-color: #dddddd;
+			border-bottom-color: #a0aec0;
 		}
 
 		#main .box {
-			border-color: #dddddd;
+			border-color: #a0aec0;
 		}
 
 		#main input[type="submit"],
@@ -3378,8 +3378,8 @@ input, select, textarea {
 		#main button,
 		#main .button {
 			background-color: transparent;
-			box-shadow: inset 0 0 0 1px #dddddd;
-			color: #636363 !important;
+			box-shadow: inset 0 0 0 1px #a0aec0;
+			color: #4a5568 !important;
 		}
 
 			#main input[type="submit"]:hover,
@@ -3411,7 +3411,7 @@ input, select, textarea {
 			#main input[type="button"].primary,
 			#main button.primary,
 			#main .button.primary {
-				background-color: #8cc9f0;
+				background-color: #00e5ff;
 				color: #ffffff !important;
 				box-shadow: none;
 			}
@@ -3421,7 +3421,7 @@ input, select, textarea {
 				#main input[type="button"].primary:hover,
 				#main button.primary:hover,
 				#main .button.primary:hover {
-					background-color: #9acff2;
+					background-color: #00e5ff;
 				}
 
 				#main input[type="submit"].primary:active,
@@ -3429,7 +3429,7 @@ input, select, textarea {
 				#main input[type="button"].primary:active,
 				#main button.primary:active,
 				#main .button.primary:active {
-					background-color: #7ec3ee;
+					background-color: #00b8d4;
 				}
 
 				#main input[type="submit"].primary.icon:before,
@@ -3441,7 +3441,7 @@ input, select, textarea {
 				}
 
 		#main label {
-			color: #636363;
+			color: #4a5568;
 		}
 
 		#main input[type="text"],
@@ -3450,7 +3450,7 @@ input, select, textarea {
 		#main select,
 		#main textarea {
 			background-color: rgba(222, 222, 222, 0.25);
-			border-color: #dddddd;
+			border-color: #a0aec0;
 		}
 
 			#main input[type="text"]:focus,
@@ -3458,8 +3458,8 @@ input, select, textarea {
 			#main input[type="email"]:focus,
 			#main select:focus,
 			#main textarea:focus {
-				border-color: #8cc9f0;
-				box-shadow: 0 0 0 1px #8cc9f0;
+				border-color: #00e5ff;
+				box-shadow: 0 0 0 1px #00e5ff;
 			}
 
 		#main select {
@@ -3467,32 +3467,32 @@ input, select, textarea {
 		}
 
 			#main select option {
-				color: #636363;
+				color: #4a5568;
 				background: #ffffff;
 			}
 
 		#main input[type="checkbox"] + label,
 		#main input[type="radio"] + label {
-			color: #636363;
+			color: #4a5568;
 		}
 
 			#main input[type="checkbox"] + label:before,
 			#main input[type="radio"] + label:before {
 				background: rgba(222, 222, 222, 0.25);
-				border-color: #dddddd;
+				border-color: #a0aec0;
 			}
 
 		#main input[type="checkbox"]:checked + label:before,
 		#main input[type="radio"]:checked + label:before {
-			background-color: #636363;
-			border-color: #636363;
+			background-color: #4a5568;
+			border-color: #4a5568;
 			color: #ffffff;
 		}
 
 		#main input[type="checkbox"]:focus + label:before,
 		#main input[type="radio"]:focus + label:before {
-			border-color: #8cc9f0;
-			box-shadow: 0 0 0 1px #8cc9f0;
+			border-color: #00e5ff;
+			box-shadow: 0 0 0 1px #00e5ff;
 		}
 
 		#main ::-webkit-input-placeholder {
@@ -3516,16 +3516,16 @@ input, select, textarea {
 		}
 
 		#main .icon.major {
-			border-color: #dddddd;
+			border-color: #a0aec0;
 		}
 
 			#main .icon.major:before {
-				border-color: #dddddd;
+				border-color: #a0aec0;
 			}
 
 		#main .icon.alt {
-			border-color: #dddddd;
-			color: #636363;
+			border-color: #a0aec0;
+			color: #4a5568;
 		}
 
 			#main .icon.alt:hover {
@@ -3537,23 +3537,23 @@ input, select, textarea {
 			}
 
 		#main ul.alt li {
-			border-top-color: #dddddd;
+			border-top-color: #a0aec0;
 		}
 
 		#main dl dt {
-			color: #636363;
+			color: #4a5568;
 		}
 
 		#main header.major h2:after {
-			background-color: #dddddd;
-			background-image: -moz-linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
-			background-image: -webkit-linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
-			background-image: -ms-linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
-			background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
+			background-color: #a0aec0;
+			background-image: -moz-linear-gradient(90deg, #00d2ff, #1e90ff, #00e5ff);
+			background-image: -webkit-linear-gradient(90deg, #00d2ff, #1e90ff, #00e5ff);
+			background-image: -ms-linear-gradient(90deg, #00d2ff, #1e90ff, #00e5ff);
+			background-image: linear-gradient(90deg, #00d2ff, #1e90ff, #00e5ff);
 		}
 
 		#main table tbody tr {
-			border-color: #dddddd;
+			border-color: #a0aec0;
 		}
 
 			#main table tbody tr:nth-child(2n + 1) {
@@ -3561,28 +3561,28 @@ input, select, textarea {
 			}
 
 		#main table th {
-			color: #636363;
+			color: #4a5568;
 		}
 
 		#main table thead {
-			border-bottom-color: #dddddd;
+			border-bottom-color: #a0aec0;
 		}
 
 		#main table tfoot {
-			border-top-color: #dddddd;
+			border-top-color: #a0aec0;
 		}
 
 		#main table.alt tbody tr td {
-			border-color: #dddddd;
+			border-color: #a0aec0;
 		}
 
 		#main .spotlight .image {
-			border-color: #dddddd;
+			border-color: #a0aec0;
 		}
 
 		#main > .main {
 			padding: 5em 5em 3em 5em ;
-			border-top: solid 1px #dddddd;
+			border-top: solid 1px #a0aec0;
 		}
 
 			#main > .main:first-child {
@@ -3783,3 +3783,80 @@ input, select, textarea {
 			}
 
 		}
+
+/* ==========================================================
+   THEME CYBER - ELEMENTS DECORATIFS LATERAUX
+   ========================================================== */
+
+body::before, body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, #00d2ff, transparent);
+    z-index: -1;
+    opacity: 0.6;
+    animation: cyber-pulse 4s infinite alternate;
+}
+
+body::before {
+    left: 20px;
+    box-shadow: 0 0 10px #00d2ff, 0 0 20px #00d2ff;
+}
+
+body::after {
+    right: 20px;
+    box-shadow: 0 0 10px #00d2ff, 0 0 20px #00d2ff;
+}
+
+/* Éléments simulant des noeuds de données / circuits */
+html::before, html::after {
+    content: '';
+    position: fixed;
+    width: 6px;
+    height: 60px;
+    background-color: #00d2ff;
+    z-index: -1;
+    border-radius: 3px;
+    box-shadow: 0 0 15px #00d2ff;
+}
+
+html::before {
+    left: 18px;
+    top: 15%;
+    animation: cyber-slide-down 15s linear infinite;
+}
+
+html::after {
+    right: 18px;
+    bottom: 15%;
+    animation: cyber-slide-up 12s linear infinite;
+}
+
+@keyframes cyber-pulse {
+    0% { opacity: 0.2; }
+    100% { opacity: 0.8; }
+}
+
+@keyframes cyber-slide-down {
+    0% { top: -10%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 110%; opacity: 0; }
+}
+
+@keyframes cyber-slide-up {
+    0% { top: 110%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: -10%; opacity: 0; }
+}
+
+/* Ajustement spécifique au wrapper pour qu'il s'intègre mieux */
+#wrapper {
+    background-color: rgba(15, 17, 26, 0.85); /* Fond légèrement transparent pour laisser deviner le fond */
+    box-shadow: 0 0 30px rgba(0, 210, 255, 0.1);
+    border: 1px solid rgba(0, 210, 255, 0.15);
+}
+
