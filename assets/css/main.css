@@ -4087,15 +4087,36 @@ body::after {
 	animation-delay: 2s;
 }
 
-/* 5. Crochets de la Photo (Ciblage 4 coins exact style cyber) */
+/* 5. Photo Profil avec Bordure Animée "Cyber Pulsante" */
+@keyframes imageGlow {
+	0% {
+		box-shadow: 0 0 10px rgba(0, 229, 255, 0.4),
+			0 0 20px rgba(0, 229, 255, 0.4) inset;
+		border-color: rgba(0, 229, 255, 0.5);
+	}
+
+	50% {
+		box-shadow: 0 0 25px rgba(0, 229, 255, 0.8),
+			0 0 40px rgba(0, 229, 255, 0.8) inset;
+		border-color: rgba(0, 229, 255, 1);
+	}
+
+	100% {
+		box-shadow: 0 0 10px rgba(0, 229, 255, 0.4),
+			0 0 20px rgba(0, 229, 255, 0.4) inset;
+		border-color: rgba(0, 229, 255, 0.5);
+	}
+}
+
 .spotlight .image {
 	position: relative;
-	border: none !important;
-	padding: 15px !important;
-	/* Espace respirant entre la photo et les crochets */
+	border: 4px solid var(--neon-cyan) !important;
+	padding: 5px !important;
+	/* Espacement intérieur */
 	border-radius: 50% !important;
 	background: transparent !important;
 	display: inline-block;
+	animation: imageGlow 3s ease-in-out infinite;
 }
 
 .spotlight .image img {
@@ -4104,39 +4125,13 @@ body::after {
 	z-index: 2;
 	background-color: transparent;
 	padding: 0;
-	box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
-	/* Lueur cyber autour de la photo */
 	display: block;
 }
 
-/* Réticule de visée (4 angles droits) autour de l'image circulaire */
-.spotlight .image::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background:
-		linear-gradient(to right, var(--neon-cyan) 3px, transparent 3px) 0 0,
-		linear-gradient(to bottom, var(--neon-cyan) 3px, transparent 3px) 0 0,
-		linear-gradient(to left, var(--neon-cyan) 3px, transparent 3px) 100% 0,
-		linear-gradient(to bottom, var(--neon-cyan) 3px, transparent 3px) 100% 0,
-		linear-gradient(to right, var(--neon-cyan) 3px, transparent 3px) 0 100%,
-		linear-gradient(to top, var(--neon-cyan) 3px, transparent 3px) 0 100%,
-		linear-gradient(to left, var(--neon-cyan) 3px, transparent 3px) 100% 100%,
-		linear-gradient(to top, var(--neon-cyan) 3px, transparent 3px) 100% 100%;
-	background-repeat: no-repeat;
-	background-size: 25px 25px;
-	/* Taille des angles */
-	z-index: 3;
-	border: none;
-	border-radius: 0;
-	pointer-events: none;
-}
-
+/* Suppression de l'ancien réticule à 4 coins */
+.spotlight .image::before,
 .spotlight .image::after {
-	display: none;
+	display: none !important;
 }
 
 /* 6. Dessins Discrets très bien rangés (Ne croisent JAMAIS le texte) */
