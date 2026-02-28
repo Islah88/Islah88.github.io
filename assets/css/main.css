@@ -4267,3 +4267,21 @@ body::after {
 	position: relative;
 	z-index: 1;
 }
+
+/* 8. Corrections Responsive (Mobile) */
+/* Sur les petits écrans où les marges disparaissent, on masque les décos externes pour ne pas empiéter sur le texte */
+@media screen and (max-width: 980px) {
+
+	html::before,
+	html::after,
+	body::before,
+	body::after,
+	#wrapper::before,
+	#wrapper::after {
+		display: none !important;
+	}
+
+	#main {
+		background-image: none !important;
+	}
+}
