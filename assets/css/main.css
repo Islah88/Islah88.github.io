@@ -3466,7 +3466,51 @@ body.is-preload #header.alt .logo {
 @media screen and (max-width: 736px) {
 
 	#nav {
-		display: none;
+		display: block;
+		/* On réactive le menu sur mobile ! */
+		position: relative;
+		width: 100%;
+		border-radius: 0;
+		padding: 10px 5px !important;
+		background-color: var(--cyber-dark) !important;
+		border-bottom: 2px solid var(--neon-cyan);
+		z-index: 10000;
+	}
+
+	#nav ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 8px;
+	}
+
+	#nav ul li {
+		margin: 0 !important;
+	}
+
+	#nav ul li a {
+		height: auto;
+		line-height: normal;
+		padding: 8px 12px;
+		font-size: 0.85em !important;
+		color: #ffffff !important;
+		background: rgba(0, 0, 0, 0.4);
+		border: 1px solid rgba(0, 229, 255, 0.3) !important;
+		border-radius: 6px;
+	}
+
+	#nav ul li a.active {
+		background-color: rgba(0, 229, 255, 0.2) !important;
+		border-color: var(--neon-cyan) !important;
+		color: var(--neon-cyan) !important;
+		box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+	}
+
+	#nav.alt {
+		position: fixed;
+		top: 0;
+		padding: 5px !important;
+		background-color: var(--cyber-dark) !important;
 	}
 
 	#nav+#main {
