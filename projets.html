@@ -132,42 +132,56 @@
 <!-- ======================= PROJET HONEYPOT (À INSÉRER) ======================= -->
 <hr />
 
-<h3>Projet 2 : Déploiement d'un Honeypot et Analyse des Attaques en Temps Réel</h3>
-<span class="image right"><img src="images/projet-honeypot.png" alt="Dashboard Kibana montrant la carte des attaques" /></span>
-<!-- NOTE : Mettez votre capture d'écran du dashboard Kibana ici -->
+<!-- Projet 2 : Plateforme de Threat Intelligence et Automatisation -->
+<h3>Projet 2 : Développement d'une Plateforme de 'Threat Intelligence' Automatisée</h3>
+<p>Ce projet, validé avec la note de <strong>19/20</strong>, transforme un honeypot passif en un outil d'extraction de renseignements proactifs. Il démontre ma capacité à gérer une infrastructure cloud complexe et à automatiser le traitement de données de sécurité.</p>
 
-<p><strong>Objectif :</strong> Mettre en place une infrastructure de détection active (un "pot de miel") pour attirer, capturer et analyser les techniques des attaquants automatisés qui scannent Internet en permanence. Ce projet m'a permis de passer de la simulation d'attaques à l'observation de menaces réelles.</p>
+<hr style="margin: 2em 0;">
 
-<p><strong>Démarche et Résultats :</strong></p>
-<ol>
-    <li>
-        <strong>Déploiement sur le Cloud :</strong>
-        <p>J'ai déployé un serveur dédié sur une instance <strong>Ubuntu 22.04</strong> chez Scaleway. L'infrastructure a été sécurisée en déplaçant le port SSH administratif sur un port non standard afin d'éviter tout conflit et de garantir un accès stable.</p>
-    </li>
-    <li>
-        <strong>Installation de T-Pot (The All-In-One Honeypot) :</strong>
-        <p>J'ai installé la suite T-Pot via <strong>Docker</strong>. Cette plateforme déploie plus de 20 honeypots différents (SSH, Telnet, web, SMB...) et intègre la pile <strong>ELK (Elasticsearch, Logstash, Kibana)</strong> pour l'agrégation et la visualisation des logs.</p>
-    </li>
-    <li>
-        <strong>Analyse et Visualisation en Direct :</strong>
-        <p>Grâce au dashboard <strong>Kibana</strong>, j'ai pu observer et analyser en temps réel les données collectées. En quelques heures seulement, le système a enregistré des centaines de tentatives d'intrusion, me permettant d'identifier :</p>
-        <ul>
-            <li>Le <strong>Top 10 des pays</strong> sources d'attaques.</li>
-            <li>Les <strong>identifiants et mots de passe</strong> les plus fréquemment utilisés lors des attaques par force brute sur SSH.</li>
-            <li>Les <strong>types de services</strong> les plus ciblés par les bots.</li>
-        </ul>
-    </li>
-</ol>
-<p>
-    <strong>Compétences Démontrées :</strong>
-    <code>Administration Système (Linux)</code>,
-    <code>Gestion Cloud (Scaleway)</code>,
-    <code>Docker</code>,
-    <code>Sécurité Réseau (Pare-feu)</code>,
-    <code>Analyse de Logs (ELK Stack)</code>,
-    <code>Threat Intelligence</code>.
+<h4>Axe 1 : Architecture Cloud et Résilience</h4>
+<span class="image left"><img src="images/projet-honeypot.png" alt="Dashboard T-Pot" /></span>
+<p>Déploiement d'une instance <strong>Ubuntu 22.04</strong> sur <strong>Scaleway</strong> (50 Go Block Storage). 
+<ul>
+    <li><strong>Sécurisation :</strong> Isolation de l'accès administratif via un port SSH non-standard et tunnel SSH chiffré pour l'accès aux interfaces d'analyse.</li>
+    <li><strong>Conteneurisation :</strong> Utilisation de <strong>Docker</strong> pour faire cohabiter 20+ honeypots (Cowrie, Dionaea, Suricata) et la pile <strong>ELK</strong>.</li>
+</ul>
 </p>
+<div style="clear: both;"></div>
 
+<hr style="margin: 1em 0; border-top: dashed 1px #ccc;">
+
+<h4>Axe 2 : Analyse Forensique et Chasse aux Menaces</h4>
+<span class="image right"><img src="images/projet-discover.png" alt="Analyse de logs dans Discover" /></span>
+<p>Analyse approfondie des sessions d'attaques réussies pour identifier la méthodologie des attaquants.
+<ul>
+    <li><strong>Capture Comportementale :</strong> Configuration "AuthAny" sur Cowrie pour enregistrer les commandes tapées par les bots post-intrusion.</li>
+    <li><strong>Corrélation de données :</strong> Identification d'IP malveillantes (ex: bots biélorusses et brésiliens) et validation de leur réputation via <strong>AbuseIPDB</strong> (score de confiance de 100%).</li>
+</ul>
+</p>
+<div style="clear: both;"></div>
+
+<hr style="margin: 1em 0; border-top: dashed 1px #ccc;">
+
+<h4>Axe 3 : Automatisation via Python (API)</h4>
+<span class="image left"><img src="images/projet-python-report.png" alt="Rapport généré en Python" /></span>
+<p>Création d'un outil de reporting autonome en <strong>Python</strong>.
+<ul>
+    <li><strong>Consommation d'API :</strong> Le script interroge directement l'API REST d'Elasticsearch pour extraire les Indicateurs de Compromission (IOCs).</li>
+    <li><strong>Reporting :</strong> Génération automatique de rapports de menaces quotidiens, classant les IP les plus agressives pour une réponse rapide.</li>
+</ul>
+</p>
+<div style="clear: both;"></div>
+
+<hr style="margin: 2em 0;">
+
+<p>
+    <strong>Compétences Clés :</strong>
+    <code>Python pour la Sécurité</code>
+    <code>Gestion d'API REST</code>
+    <code>Elasticsearch / Kibana</code>
+    <code>Threat Intelligence (CTI)</code>
+    <code>Administration Cloud</code>
+</p>
 <div style="clear:both;"></div>
 <hr />
 <!-- ========================================================================= -->
