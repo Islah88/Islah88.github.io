@@ -3937,25 +3937,52 @@ body.is-preload #header.alt .logo {
 }
 
 /* ==========================================================
-   THEME CYBER - THEME SOMBRE (BORDS) + CLAIR (CENTRE) & HARMONISATION CV
+   THEME CYBER - REPRODUCTION EXACTE DU CV LATEX & LETTRE
    ========================================================== */
 
-/* 1. Couleurs Exactes du CV et du Thème Cyber */
 :root {
 	--cyber-dark: #0B1021;
 	--tech-blue: #005691;
 	--cyber-cyan: #008C9E;
-	/* Ou #00e5ff pour plus de néon */
 	--neon-cyan: #00e5ff;
 	--dark-grey: #2C3E50;
-	--bg-light: #fdfdfd;
+	--bg-light: #ffffff;
 }
 
-/* 2. Base : Fond Sombre (pour les bordures externes) */
+/* 1. Base : Fond Sombre (Bordures externes) */
 body {
 	background-color: var(--cyber-dark) !important;
 	color: var(--dark-grey) !important;
-	/* Texte de base */
+}
+
+/* 2. En-tête et Pied de Page (Couleur différenciée Sombre) */
+#header,
+#footer {
+	background-color: var(--cyber-dark) !important;
+	border: none;
+	border-top: 3px solid var(--tech-blue);
+	border-bottom: 3px solid var(--tech-blue);
+	position: relative;
+	border-radius: 0;
+}
+
+#header h1,
+#header p,
+#header strong,
+#header b {
+	color: var(--bg-light) !important;
+	/* Blanc sur fond noir pour contraste */
+}
+
+#footer h2,
+#footer h3,
+#footer strong,
+#footer b {
+	color: var(--bg-light) !important;
+}
+
+#header {
+	margin-top: 2em;
 }
 
 /* 3. Zone de Contenu Principale (Claire) */
@@ -3964,35 +3991,19 @@ body {
 	box-shadow: 0 0 30px rgba(0, 0, 0, 0.5) !important;
 	position: relative;
 	z-index: 10;
+	overflow: hidden;
+	/* Pour les dessins en background */
 }
 
-#header,
-#footer {
-	background-color: var(--bg-light) !important;
-	border: none;
-	color: var(--dark-grey) !important;
-}
-
-/* Titres en TechBlue */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong,
-b {
+#main h1,
+#main h2,
+#main h3,
+#main h4,
+#main h5,
+#main h6,
+#main strong,
+#main b {
 	color: var(--tech-blue) !important;
-}
-
-#header h1,
-#header p {
-	color: var(--tech-blue) !important;
-}
-
-a,
-a:hover {
-	color: var(--neon-cyan) !important;
 }
 
 table th,
@@ -4000,31 +4011,88 @@ dl dt {
 	color: var(--tech-blue) !important;
 }
 
-blockquote {
-	border-left-color: var(--neon-cyan) !important;
+a,
+a:hover {
+	color: var(--cyber-cyan) !important;
 }
 
 header.major h2:after {
 	background-color: var(--tech-blue) !important;
+	background-image: none !important;
 }
 
-/* 4. Effets de Lignes Lumineuses (Bords de l'écran - Retour au design original) */
+blockquote {
+	border-left-color: var(--cyber-cyan) !important;
+}
+
+/* 4. Effets "Ascenseurs" (Lignes verticales lumineuses animées) */
+@keyframes cyberElevator {
+	0% {
+		top: -20vh;
+		opacity: 0;
+	}
+
+	10% {
+		opacity: 1;
+	}
+
+	90% {
+		opacity: 1;
+	}
+
+	100% {
+		top: 120vh;
+		opacity: 0;
+	}
+}
+
 html::before,
 html::after {
-	background-color: var(--neon-cyan) !important;
-	box-shadow: 0 0 15px var(--neon-cyan) !important;
+	content: '';
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 2px;
+	background-color: rgba(0, 229, 255, 0.1) !important;
+	z-index: 100;
+}
+
+html::before {
+	left: 15px;
+}
+
+html::after {
+	right: 15px;
 }
 
 body::before,
 body::after {
+	content: '';
+	position: fixed;
+	width: 2px;
+	height: 15vh;
 	background: linear-gradient(to bottom, transparent, var(--neon-cyan), transparent) !important;
+	box-shadow: 0 0 15px var(--neon-cyan) !important;
+	z-index: 101;
+	animation: cyberElevator 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* 5. Crochets de la Photo (Exactement comme le CV LaTeX) */
+body::before {
+	left: 15px;
+	animation-delay: 0s;
+}
+
+body::after {
+	right: 15px;
+	animation-delay: 2s;
+}
+
+/* 5. Crochets de la Photo Courbés (Comme sur le CV de Stage) */
 .spotlight .image {
 	position: relative;
 	border: none !important;
-	padding: 0 !important;
+	padding: 8px !important;
+	/* Espace pour les crochets courbés */
 	border-radius: 50% !important;
 	background: transparent !important;
 	display: inline-block;
@@ -4034,59 +4102,55 @@ body::after {
 	border-radius: 50% !important;
 	position: relative;
 	z-index: 2;
-	background-color: #fff;
-	padding: 3px;
-	/* Bordure blanche interne du CV */
-	box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+	background-color: transparent;
+	padding: 0;
+	/* Pas de bordure blanche interne, juste l'image pure */
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 	display: block;
 }
 
-/* Les petits "crochets" accrocheurs cyan/bleu */
+/* Crochets courbés épousant la forme ronde de la photo */
 .spotlight .image::before,
 .spotlight .image::after {
 	content: '';
 	position: absolute;
-	width: 20px;
-	height: 20px;
-	border: 3px solid var(--cyber-cyan);
-	/* Ou neon-cyan */
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: 50%;
 	z-index: 3;
-	background: transparent;
+	border: 3px solid var(--cyber-cyan);
 }
 
 /* Crochet Haut Gauche */
 .spotlight .image::before {
-	top: -4px;
-	left: -4px;
-	border-right: none;
-	border-bottom: none;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+	transform: rotate(-15deg);
 }
 
 /* Crochet Bas Droite */
 .spotlight .image::after {
-	bottom: -4px;
-	right: -4px;
-	border-left: none;
-	border-top: none;
+	border-left-color: transparent;
+	border-top-color: transparent;
+	transform: rotate(-15deg);
 }
 
-/* 6. Décorations Arrière-Plan sur le #main (Simulant le LaTeX Lettre/CV) */
-/* Wrapper doit avoir overflow visible pour que les decos ne soient pas coupées, 
- * mais utilisons plutôt des :before/:after sur #main */
-
+/* 6. Dessins Discrets (Lettre de Motivation) en Background de #main */
 #main::before {
 	content: '';
 	position: absolute;
 	top: 50px;
-	right: 20px;
-	width: 150px;
-	height: 150px;
-	/* Hexagones Haut-Droite (TechBlue opacity 0.15 du LaTeX) */
-	background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='50,10 90,30 90,70 50,90 10,70 10,30' fill='none' stroke='%23005691' stroke-width='2' stroke-opacity='0.15'/%3E%3Cpolygon points='50,25 75,40 75,60 50,75 25,60 25,40' fill='none' stroke='%23005691' stroke-width='2' stroke-opacity='0.15'/%3E%3C/svg%3E");
+	left: 0;
+	width: 300px;
+	height: 300px;
+	/* Hexagones Top Left + Circuit Diagonal (du LaTeX de la lettre) */
+	background-image:
+		url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='30,15 45,25 45,40 30,50 15,40 15,25' fill='none' stroke='%23005691' stroke-width='1.5' stroke-opacity='0.1'/%3E%3Cpolygon points='30,45 45,55 45,70 30,80 15,70 15,55' fill='none' stroke='%23005691' stroke-width='1.5' stroke-opacity='0.1'/%3E%3Cpolygon points='55,25 70,35 70,50 55,60 40,50 40,35' fill='none' stroke='%23005691' stroke-width='1.5' stroke-opacity='0.1'/%3E%3C/svg%3E"),
+		url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,150 L50,150 L100,200 L120,200' fill='none' stroke='%23005691' stroke-width='2' stroke-opacity='0.15'/%3E%3Ccircle cx='120' cy='200' r='3' fill='%23005691' fill-opacity='0.3'/%3E%3Cpath d='M80,150 L80,180 L110,210 L140,210' fill='none' stroke='%23005691' stroke-width='1' stroke-opacity='0.15'/%3E%3Ccircle cx='140' cy='210' r='2' fill='%23005691' fill-opacity='0.3'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
-	background-size: contain;
 	z-index: 0;
-	transform: rotate(15deg);
 	pointer-events: none;
 }
 
@@ -4094,52 +4158,15 @@ body::after {
 	content: '';
 	position: absolute;
 	bottom: 50px;
-	left: 20px;
-	/* Mis à gauche pour équilibrer, ou droite selon préférence */
-	width: 150px;
-	height: 150px;
-	/* Décoration Bas-Gauche/Droit (Cercles alignés du LaTeX) */
-	background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='20' fill='none' stroke='%23005691' stroke-width='2' stroke-opacity='0.15'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%23005691' stroke-width='2' stroke-opacity='0.15'/%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%23005691' stroke-width='2' stroke-opacity='0.15'/%3E%3C/svg%3E");
+	right: 0;
+	width: 300px;
+	height: 300px;
+	/* Circuit Bottom Right / Right Margin (du LaTeX de la lettre) */
+	background-image:
+		url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M300,100 L250,100 L200,50 L200,0' fill='none' stroke='%23005691' stroke-width='2' stroke-opacity='0.15'/%3E%3Ccircle cx='200' cy='50' r='3' fill='%23005691' fill-opacity='0.3'/%3E%3Cpath d='M300,130 L270,130 L250,110 L250,90' fill='none' stroke='%23005691' stroke-width='1' stroke-opacity='0.15'/%3E%3Ccircle cx='250' cy='110' r='2' fill='%23005691' fill-opacity='0.3'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-position: bottom right;
 	z-index: 0;
-	transform: rotate(-15deg);
-	pointer-events: none;
-}
-
-/* Ligne "Circuit" verticale discrète dans la marge gauche du #main */
-#wrapper {
-	position: relative;
-}
-
-#wrapper::before {
-	content: '';
-	position: absolute;
-	top: 100px;
-	bottom: 100px;
-	left: -30px;
-	/* Déborde légèrement à l'extérieur du bloc principal */
-	width: 2px;
-	background-color: rgba(0, 86, 145, 0.3);
-	/* TechBlue!30 */
-	z-index: 100;
-	pointer-events: none;
-}
-
-#wrapper::after {
-	content: '';
-	position: absolute;
-	top: 25%;
-	left: -33px;
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	background-color: rgba(0, 86, 145, 0.5);
-	/* TechBlue!50 */
-	box-shadow:
-		0 200px 0 rgba(0, 86, 145, 0.5),
-		0 400px 0 rgba(0, 86, 145, 0.5);
-	z-index: 100;
 	pointer-events: none;
 }
 
