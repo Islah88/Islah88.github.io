@@ -4087,12 +4087,11 @@ body::after {
 	animation-delay: 2s;
 }
 
-/* 5. Crochets de la Photo Courbés (Comme sur le CV de Stage) */
+/* 5. Crochets de la Photo (Exactement comme la précédente itération du CV) */
 .spotlight .image {
 	position: relative;
 	border: none !important;
 	padding: 8px !important;
-	/* Espace pour les crochets courbés */
 	border-radius: 50% !important;
 	background: transparent !important;
 	display: inline-block;
@@ -4104,52 +4103,52 @@ body::after {
 	z-index: 2;
 	background-color: transparent;
 	padding: 0;
-	/* Pas de bordure blanche interne, juste l'image pure */
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 	display: block;
 }
 
-/* Crochets courbés épousant la forme ronde de la photo */
+/* Crochets carrés et détachés (façon "ciblage" cyber) */
 .spotlight .image::before,
 .spotlight .image::after {
 	content: '';
 	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	border-radius: 50%;
-	z-index: 3;
+	width: 30px;
+	height: 30px;
 	border: 3px solid var(--cyber-cyan);
+	border-radius: 0;
+	/* Bien forcer l'angle droit */
+	z-index: 3;
 }
 
 /* Crochet Haut Gauche */
 .spotlight .image::before {
-	border-right-color: transparent;
-	border-bottom-color: transparent;
-	transform: rotate(-15deg);
+	top: -2px;
+	left: -2px;
+	border-right: none;
+	border-bottom: none;
 }
 
 /* Crochet Bas Droite */
 .spotlight .image::after {
-	border-left-color: transparent;
-	border-top-color: transparent;
-	transform: rotate(-15deg);
+	bottom: -2px;
+	right: -2px;
+	border-left: none;
+	border-top: none;
 }
 
 /* 6. Dessins Discrets (Lettre de Motivation) en Background de #main */
 #main::before {
 	content: '';
 	position: absolute;
-	top: 50px;
+	top: 0;
 	left: 0;
-	width: 300px;
-	height: 300px;
-	/* Hexagones Top Left + Circuit Diagonal (du LaTeX de la lettre) */
+	width: 150px;
+	height: 150px;
+	/* Hexagones Top Left + Circuit Minimaliste */
 	background-image:
-		url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='30,15 45,25 45,40 30,50 15,40 15,25' fill='none' stroke='%23005691' stroke-width='1.5' stroke-opacity='0.1'/%3E%3Cpolygon points='30,45 45,55 45,70 30,80 15,70 15,55' fill='none' stroke='%23005691' stroke-width='1.5' stroke-opacity='0.1'/%3E%3Cpolygon points='55,25 70,35 70,50 55,60 40,50 40,35' fill='none' stroke='%23005691' stroke-width='1.5' stroke-opacity='0.1'/%3E%3C/svg%3E"),
-		url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,150 L50,150 L100,200 L120,200' fill='none' stroke='%23005691' stroke-width='2' stroke-opacity='0.15'/%3E%3Ccircle cx='120' cy='200' r='3' fill='%23005691' fill-opacity='0.3'/%3E%3Cpath d='M80,150 L80,180 L110,210 L140,210' fill='none' stroke='%23005691' stroke-width='1' stroke-opacity='0.15'/%3E%3Ccircle cx='140' cy='210' r='2' fill='%23005691' fill-opacity='0.3'/%3E%3C/svg%3E");
+		url("data:image/svg+xml,%3Csvg width='150' height='150' viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='20,10 30,17 30,27 20,34 10,27 10,17' fill='none' stroke='%23005691' stroke-width='1.5' stroke-opacity='0.15'/%3E%3Cpolygon points='20,30 30,37 30,47 20,54 10,47 10,37' fill='none' stroke='%23005691' stroke-width='1.5' stroke-opacity='0.15'/%3E%3Cpolygon points='37,17 47,24 47,34 37,41 27,34 27,24' fill='none' stroke='%23005691' stroke-width='1.5' stroke-opacity='0.15'/%3E%3Cpath d='M0,100 L30,100 L50,130 L70,130' fill='none' stroke='%23005691' stroke-width='2' stroke-opacity='0.15'/%3E%3Ccircle cx='70' cy='130' r='3' fill='%23005691' fill-opacity='0.3'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
+	background-position: top left;
 	z-index: 0;
 	pointer-events: none;
 }
@@ -4157,13 +4156,13 @@ body::after {
 #main::after {
 	content: '';
 	position: absolute;
-	bottom: 50px;
+	bottom: 0;
 	right: 0;
-	width: 300px;
-	height: 300px;
-	/* Circuit Bottom Right / Right Margin (du LaTeX de la lettre) */
+	width: 150px;
+	height: 150px;
+	/* Circuit Bottom Right */
 	background-image:
-		url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M300,100 L250,100 L200,50 L200,0' fill='none' stroke='%23005691' stroke-width='2' stroke-opacity='0.15'/%3E%3Ccircle cx='200' cy='50' r='3' fill='%23005691' fill-opacity='0.3'/%3E%3Cpath d='M300,130 L270,130 L250,110 L250,90' fill='none' stroke='%23005691' stroke-width='1' stroke-opacity='0.15'/%3E%3Ccircle cx='250' cy='110' r='2' fill='%23005691' fill-opacity='0.3'/%3E%3C/svg%3E");
+		url("data:image/svg+xml,%3Csvg width='150' height='150' viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M150,50 L120,50 L100,20 L80,20' fill='none' stroke='%23005691' stroke-width='2' stroke-opacity='0.15'/%3E%3Ccircle cx='80' cy='20' r='3' fill='%23005691' fill-opacity='0.3'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	background-position: bottom right;
 	z-index: 0;
