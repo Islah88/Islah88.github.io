@@ -4272,10 +4272,6 @@ body::after {
 /* Sur les petits écrans où les marges disparaissent, on masque les décos externes pour ne pas empiéter sur le texte */
 @media screen and (max-width: 980px) {
 
-	html::before,
-	html::after,
-	body::before,
-	body::after,
 	#wrapper::before,
 	#wrapper::after {
 		display: none !important;
@@ -4283,5 +4279,22 @@ body::after {
 
 	#main {
 		background-image: none !important;
+	}
+
+	/* Ajustement des ascenseurs lumineux pour qu'ils restent visibles et ne gênent pas */
+	html::before {
+		left: 2px !important;
+	}
+
+	html::after {
+		right: 2px !important;
+	}
+
+	body::before {
+		left: 2px !important;
+	}
+
+	body::after {
+		right: 2px !important;
 	}
 }
