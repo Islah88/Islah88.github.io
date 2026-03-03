@@ -4193,7 +4193,7 @@ body::after {
 	height: 200%;
 	/* Gradient plus discret : surtout transparent, courte traînée cyan, avec un point (noeud de connexion) au bout */
 	background:
-		radial-gradient(circle at 50% 25%, var(--neon-cyan) 0%, var(--neon-cyan) 4px, transparent 5px),
+		radial-gradient(circle at 50% 25%, var(--neon-cyan) 0%, var(--neon-cyan) 8px, transparent 9px),
 		conic-gradient(transparent 85%, rgba(0, 229, 255, 0.2) 95%, var(--neon-cyan) 100%);
 	animation: cyberSpin 14s linear infinite, matrixBlink 5s ease-in-out infinite;
 	/* Ralenti à 14s pour caler sur Matrix, et ajout du blink identique */
