@@ -4069,66 +4069,86 @@ blockquote {
 	border-left-color: var(--cyber-cyan) !important;
 }
 
-/* 4. Effets "Ascenseurs" (Lignes verticales lumineuses animées) */
-@keyframes cyberElevator {
+/* 4. Effets "Pluie Matrix Cyber" (Lignes verticales de chiffres animés, douce et atténuante) */
+@keyframes matrixRain {
 	0% {
-		top: -20vh;
-		opacity: 0;
-	}
-
-	10% {
-		opacity: 1;
-	}
-
-	90% {
-		opacity: 1;
+		top: -100vh;
 	}
 
 	100% {
 		top: 120vh;
-		opacity: 0;
 	}
+}
+
+@keyframes matrixBlink {
+
+	0%,
+	100% {
+		opacity: 0.1;
+		text-shadow: 0 0 2px var(--neon-cyan);
+	}
+
+	50% {
+		opacity: 0.6;
+		text-shadow: 0 0 10px var(--neon-cyan);
+	}
+
+	/* Doux, attiré par l'oeil sans éblouir */
+}
+
+html::before,
+html::after,
+body::before,
+body::after {
+	position: fixed;
+	width: 1ch;
+	word-break: break-all;
+	font-family: 'Courier New', Courier, monospace;
+	z-index: 99;
+	text-align: center;
+	pointer-events: none;
+	-webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+	mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
 }
 
 html::before,
 html::after {
-	content: '';
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	width: 2px;
-	background-color: rgba(0, 229, 255, 0.1) !important;
-	z-index: 100;
-}
-
-html::before {
-	left: 15px;
-}
-
-html::after {
-	right: 15px;
+	content: '010110010110100101100010101010101001100101101001101010010';
+	/* Binaire continu */
+	font-size: 14px;
+	line-height: 1.2;
+	color: var(--neon-cyan);
+	animation: matrixRain 14s linear infinite, matrixBlink 5s ease-in-out infinite;
 }
 
 body::before,
 body::after {
-	content: '';
-	position: fixed;
-	width: 2px;
-	height: 15vh;
-	background: linear-gradient(to bottom, transparent, var(--neon-cyan), transparent) !important;
-	box-shadow: 0 0 15px var(--neon-cyan) !important;
-	z-index: 101;
-	animation: cyberElevator 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	content: '10010110100101100011010101010011001101101001101010010';
+	/* Autre séquence */
+	font-size: 12px;
+	line-height: 1.4;
+	color: rgba(0, 229, 255, 0.7);
+	animation: matrixRain 18s linear infinite, matrixBlink 4s ease-in-out infinite;
+}
+
+html::before {
+	left: 15px;
+	animation-delay: 0s, 1s;
+}
+
+html::after {
+	right: 15px;
+	animation-delay: 7s, 3s;
 }
 
 body::before {
-	left: 15px;
-	animation-delay: 0s;
+	left: 35px;
+	animation-delay: 4s, 0s;
 }
 
 body::after {
-	right: 15px;
-	animation-delay: 2s;
+	right: 35px;
+	animation-delay: 11s, 2s;
 }
 
 /* 5. Photo Profil avec Animation "Ascenseur Rotatif" (Spinning Light) */
@@ -4326,20 +4346,20 @@ body::after {
 		background-image: none !important;
 	}
 
-	/* Ajustement des ascenseurs lumineux pour qu'ils restent visibles et ne gênent pas */
+	/* Ajustement de la pluie Matrix sur mobile */
 	html::before {
 		left: 2px !important;
+		font-size: 10px !important;
 	}
 
 	html::after {
 		right: 2px !important;
+		font-size: 10px !important;
 	}
 
-	body::before {
-		left: 2px !important;
-	}
-
+	body::before,
 	body::after {
-		right: 2px !important;
+		display: none !important;
+		/* Moins chargé sur mobile, une seule colonne suffit */
 	}
 }
