@@ -4226,10 +4226,10 @@ body::after {
 	z-index: 10;
 	overflow: hidden;
 	background-image:
-		/* Contour circuit haut-droite collé à la bordure */
-		url("data:image/svg+xml,%3Csvg width='80' height='200' viewBox='0 0 80 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M80,20 L50,20 L20,50 L20,200' fill='none' stroke='%23005691' stroke-width='2' stroke-opacity='0.3'/%3E%3Ccircle cx='20' cy='50' r='4' fill='%23005691' fill-opacity='0.5'/%3E%3C/svg%3E"),
-		/* Contour circuit bas-gauche collé à la bordure */
-		url("data:image/svg+xml,%3Csvg width='80' height='200' viewBox='0 0 80 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,180 L30,180 L60,150 L60,0' fill='none' stroke='%23005691' stroke-width='2' stroke-opacity='0.3'/%3E%3Ccircle cx='60' cy='150' r='4' fill='%23005691' fill-opacity='0.5'/%3E%3C/svg%3E");
+		/* Nouveau circuit fluide plus long pour le coin Haut Droite */
+		url("data:image/svg+xml,%3Csvg width='120' height='600' viewBox='0 0 120 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%2300E5FF' stroke-width='2.5' stroke-opacity='0.6'%3E%3Cpath d='M90,-10 L90,150 L70,170 L70,350 L50,370 L50,450' /%3E%3Cpath d='M110,-10 L110,200 L90,220 L90,400 L70,420 L70,480' /%3E%3Cpath d='M90,80 L110,100 L130,100' /%3E%3Cpath d='M70,250 L50,250 L50,300' /%3E%3Cpath d='M90,300 L110,320 L110,380' /%3E%3Cpath d='M60,-10 L60,80 L40,100 L40,250' /%3E%3C/g%3E%3Cg fill='%2300E5FF' fill-opacity='0.9'%3E%3Ccircle cx='50' cy='450' r='4' /%3E%3Ccircle cx='70' cy='480' r='4' /%3E%3Ccircle cx='50' cy='300' r='4' /%3E%3Ccircle cx='110' cy='380' r='4' /%3E%3Ccircle cx='40' cy='250' r='4' /%3E%3C/g%3E%3C/svg%3E"),
+		/* Nouveau circuit fluide plus long inversé pour le coin Bas Gauche */
+		url("data:image/svg+xml,%3Csvg width='120' height='600' viewBox='0 0 120 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(180 60 300)'%3E%3Cg fill='none' stroke='%2300E5FF' stroke-width='2.5' stroke-opacity='0.6'%3E%3Cpath d='M90,-10 L90,150 L70,170 L70,350 L50,370 L50,450' /%3E%3Cpath d='M110,-10 L110,200 L90,220 L90,400 L70,420 L70,480' /%3E%3Cpath d='M90,80 L110,100 L130,100' /%3E%3Cpath d='M70,250 L50,250 L50,300' /%3E%3Cpath d='M90,300 L110,320 L110,380' /%3E%3Cpath d='M60,-10 L60,80 L40,100 L40,250' /%3E%3C/g%3E%3Cg fill='%2300E5FF' fill-opacity='0.9'%3E%3Ccircle cx='50' cy='450' r='4' /%3E%3Ccircle cx='70' cy='480' r='4' /%3E%3Ccircle cx='50' cy='300' r='4' /%3E%3Ccircle cx='110' cy='380' r='4' /%3E%3Ccircle cx='40' cy='250' r='4' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 	background-position: top right, bottom left;
 	background-repeat: no-repeat;
 	background-size: auto;
@@ -4246,32 +4246,9 @@ body::after {
 	position: relative;
 }
 
-#wrapper::before {
-	content: '';
-	position: absolute;
-	top: 100px;
-	bottom: 100px;
-	left: -30px;
-	width: 2px;
-	background-color: rgba(0, 229, 255, 0.3);
-	z-index: 100;
-	pointer-events: none;
-}
-
+#wrapper::before,
 #wrapper::after {
-	content: '';
-	position: absolute;
-	top: 25%;
-	left: -33px;
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	background-color: var(--neon-cyan);
-	box-shadow:
-		0 200px 0 var(--neon-cyan),
-		0 400px 0 var(--neon-cyan);
-	z-index: 100;
-	pointer-events: none;
+	display: none !important;
 }
 
 /* 7. Refonte des Blocs Statistiques (Parcours, Expérience) pour attirer l'oeil */
