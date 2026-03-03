@@ -4102,12 +4102,16 @@ body::before,
 body::after,
 .matrix-col {
 	position: fixed;
-	width: 1ch;
+	width: 25px;
+	/* Largeur fixe pour la colonne */
 	word-break: break-all;
 	font-family: 'Courier New', Courier, monospace;
-	z-index: 99;
+	z-index: -1;
+	/* Derrière le contenu principal */
 	text-align: center;
 	pointer-events: none;
+	top: 0;
+	bottom: 0;
 	-webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
 	mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
 }
@@ -4142,52 +4146,52 @@ body::after,
 }
 
 html::before {
-	left: 10px;
+	left: 2%;
 	animation-delay: 0s, 1s;
 }
 
 html::after {
-	right: 10px;
+	right: 2%;
 	animation-delay: 7s, 3s;
 }
 
 body::before {
-	left: 30px;
+	left: 8%;
 	animation-delay: 4s, 0s;
 }
 
 body::after {
-	right: 30px;
+	right: 8%;
 	animation-delay: 11s, 2s;
 }
 
 .matrix-col.col-out.left {
-	left: 50px;
+	left: 14%;
 	animation: matrixRain 15s linear infinite 2s, matrixBlink 6s ease-in-out infinite 1s;
 }
 
 .matrix-col.col-out.right {
-	right: 50px;
+	right: 14%;
 	animation: matrixRain 16s linear infinite 1s, matrixBlink 5.5s ease-in-out infinite 2s;
 }
 
 .matrix-col.col-mid.left {
-	left: 70px;
+	left: 20%;
 	animation: matrixRain 20s linear infinite 5s, matrixBlink 4.5s ease-in-out infinite 3s;
 }
 
 .matrix-col.col-mid.right {
-	right: 70px;
+	right: 20%;
 	animation: matrixRain 19s linear infinite 3s, matrixBlink 5s ease-in-out infinite 0s;
 }
 
 .matrix-col.col-in.left {
-	left: 90px;
+	left: 26%;
 	animation: matrixRain 25s linear infinite 1s, matrixBlink 7s ease-in-out infinite 4s;
 }
 
 .matrix-col.col-in.right {
-	right: 90px;
+	right: 26%;
 	animation: matrixRain 24s linear infinite 6s, matrixBlink 6.5s ease-in-out infinite 1s;
 }
 
