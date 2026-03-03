@@ -4088,7 +4088,14 @@ blockquote {
 		text-shadow:
 			0 0 2px var(--neon-cyan),
 			40px 0 2px var(--neon-cyan),
-			80px 0 2px var(--neon-cyan);
+			80px 0 2px var(--neon-cyan),
+			120px 0 2px var(--neon-cyan),
+			160px 0 2px var(--neon-cyan),
+			200px 0 2px var(--neon-cyan),
+			240px 0 2px var(--neon-cyan),
+			280px 0 2px var(--neon-cyan),
+			320px 0 2px var(--neon-cyan),
+			360px 0 2px var(--neon-cyan);
 	}
 
 	50% {
@@ -4096,7 +4103,14 @@ blockquote {
 		text-shadow:
 			0 0 10px var(--neon-cyan),
 			40px 0 10px var(--neon-cyan),
-			80px 0 10px var(--neon-cyan);
+			80px 0 10px var(--neon-cyan),
+			120px 0 10px var(--neon-cyan),
+			160px 0 10px var(--neon-cyan),
+			200px 0 10px var(--neon-cyan),
+			240px 0 10px var(--neon-cyan),
+			280px 0 10px var(--neon-cyan),
+			320px 0 10px var(--neon-cyan),
+			360px 0 10px var(--neon-cyan);
 	}
 }
 
@@ -4108,7 +4122,14 @@ blockquote {
 		text-shadow:
 			0 0 2px var(--neon-cyan),
 			-40px 0 2px var(--neon-cyan),
-			-80px 0 2px var(--neon-cyan);
+			-80px 0 2px var(--neon-cyan),
+			-120px 0 2px var(--neon-cyan),
+			-160px 0 2px var(--neon-cyan),
+			-200px 0 2px var(--neon-cyan),
+			-240px 0 2px var(--neon-cyan),
+			-280px 0 2px var(--neon-cyan),
+			-320px 0 2px var(--neon-cyan),
+			-360px 0 2px var(--neon-cyan);
 	}
 
 	50% {
@@ -4116,7 +4137,14 @@ blockquote {
 		text-shadow:
 			0 0 10px var(--neon-cyan),
 			-40px 0 10px var(--neon-cyan),
-			-80px 0 10px var(--neon-cyan);
+			-80px 0 10px var(--neon-cyan),
+			-120px 0 10px var(--neon-cyan),
+			-160px 0 10px var(--neon-cyan),
+			-200px 0 10px var(--neon-cyan),
+			-240px 0 10px var(--neon-cyan),
+			-280px 0 10px var(--neon-cyan),
+			-320px 0 10px var(--neon-cyan),
+			-360px 0 10px var(--neon-cyan);
 	}
 }
 
