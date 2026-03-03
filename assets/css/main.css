@@ -4085,15 +4085,39 @@ blockquote {
 	0%,
 	100% {
 		opacity: 0.1;
-		text-shadow: 0 0 2px var(--neon-cyan);
+		text-shadow:
+			0 0 2px var(--neon-cyan),
+			40px 0 2px var(--neon-cyan),
+			80px 0 2px var(--neon-cyan);
 	}
 
 	50% {
 		opacity: 0.6;
-		text-shadow: 0 0 10px var(--neon-cyan);
+		text-shadow:
+			0 0 10px var(--neon-cyan),
+			40px 0 10px var(--neon-cyan),
+			80px 0 10px var(--neon-cyan);
+	}
+}
+
+@keyframes matrixBlinkAlt {
+
+	0%,
+	100% {
+		opacity: 0.1;
+		text-shadow:
+			0 0 2px var(--neon-cyan),
+			-40px 0 2px var(--neon-cyan),
+			-80px 0 2px var(--neon-cyan);
 	}
 
-	/* Doux, attiré par l'oeil sans éblouir */
+	50% {
+		opacity: 0.6;
+		text-shadow:
+			0 0 10px var(--neon-cyan),
+			-40px 0 10px var(--neon-cyan),
+			-80px 0 10px var(--neon-cyan);
+	}
 }
 
 html::before,
@@ -4117,25 +4141,21 @@ body::after,
 }
 
 html::before,
-html::after,
-.matrix-col.col-out {
-	content: '010110010110100101100010101010101001100101101001101010010';
+html::after {
+	content: '010110010110100101100010101010101001100101101001101010010011010100101100101011010010110001010101010100110';
 	/* Binaire continu */
 	font-size: 14px;
 	line-height: 1.2;
 	color: var(--neon-cyan);
-	animation: matrixRain 14s linear infinite, matrixBlink 5s ease-in-out infinite;
 }
 
 body::before,
-body::after,
-.matrix-col.col-mid {
-	content: '10010110100101100011010101010011001101101001101010010';
+body::after {
+	content: '10010110100101100011010101010011001101101001101010010100101101001011000110101010100110011011010011010';
 	/* Autre séquence */
-	font-size: 12px;
+	font-size: 13px;
 	line-height: 1.4;
 	color: rgba(0, 229, 255, 0.7);
-	animation: matrixRain 18s linear infinite, matrixBlink 4s ease-in-out infinite;
 }
 
 .matrix-col.col-in {
@@ -4147,53 +4167,29 @@ body::after,
 
 html::before {
 	left: 2%;
+	animation: matrixRain 14s linear infinite, matrixBlink 5s ease-in-out infinite;
 	animation-delay: 0s, 1s;
 }
 
 html::after {
 	right: 2%;
+	animation: matrixRain 14s linear infinite, matrixBlinkAlt 5s ease-in-out infinite;
 	animation-delay: 7s, 3s;
 }
 
 body::before {
-	left: 8%;
+	left: 12%;
+	animation: matrixRain 18s linear infinite, matrixBlink 4s ease-in-out infinite;
 	animation-delay: 4s, 0s;
 }
 
 body::after {
-	right: 8%;
+	right: 12%;
+	animation: matrixRain 18s linear infinite, matrixBlinkAlt 4s ease-in-out infinite;
 	animation-delay: 11s, 2s;
 }
 
-.matrix-col.col-out.left {
-	left: 14%;
-	animation: matrixRain 15s linear infinite 2s, matrixBlink 6s ease-in-out infinite 1s;
-}
 
-.matrix-col.col-out.right {
-	right: 14%;
-	animation: matrixRain 16s linear infinite 1s, matrixBlink 5.5s ease-in-out infinite 2s;
-}
-
-.matrix-col.col-mid.left {
-	left: 20%;
-	animation: matrixRain 20s linear infinite 5s, matrixBlink 4.5s ease-in-out infinite 3s;
-}
-
-.matrix-col.col-mid.right {
-	right: 20%;
-	animation: matrixRain 19s linear infinite 3s, matrixBlink 5s ease-in-out infinite 0s;
-}
-
-.matrix-col.col-in.left {
-	left: 26%;
-	animation: matrixRain 25s linear infinite 1s, matrixBlink 7s ease-in-out infinite 4s;
-}
-
-.matrix-col.col-in.right {
-	right: 26%;
-	animation: matrixRain 24s linear infinite 6s, matrixBlink 6.5s ease-in-out infinite 1s;
-}
 
 
 /* 5. Photo Profil avec Animation "Ascenseur Rotatif" (Spinning Light) */
