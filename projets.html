@@ -26,15 +26,20 @@
         }
         .project-badge {
             display: inline-block;
-            padding: 0.2em 0.8em;
+            padding: 0.3em 1em;
             border-radius: 20px;
-            font-size: 0.7em;
-            font-weight: bold;
-            margin-bottom: 1em;
+            font-size: 0.75em;
+            font-weight: 700;
+            margin-bottom: 1.2em;
+            margin-right: 0.5em;
             text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
         .badge-ai { background: #00ff4115; color: #00ff41; border: 1px solid #00ff4150; }
         .badge-dev { background: #008cff15; color: #008cff; border: 1px solid #008cff50; }
+        .badge-sec { background: #ff00ff15; color: #ff00ff; border: 1px solid #ff00ff50; }
+        .badge-data { background: #ff8c0015; color: #ff8c00; border: 1px solid #ff8c0050; }
+        .badge-cloud { background: #00e5ff15; color: #00e5ff; border: 1px solid #00e5ff50; }
     </style>
 </head>
 
@@ -66,14 +71,15 @@
                 <p>Voici une sélection de mes travaux les plus aboutis, mêlant analyse de données, automatisation par IA et cybersécurité offensive/défensive.</p>
                 <hr />
 
-                <!-- Projet 1 : SignalHire (NOUVEAU - Mis en avant) -->
+                <!-- PROJET 1 : SignalHire -->
                 <article>
                     <header>
                         <span class="project-badge badge-ai">Intelligence Artificielle</span>
                         <span class="project-badge badge-dev">Fullstack Development</span>
+                        <span class="project-badge badge-data">Automatisation</span>
                         <h3>Projet 1 : SignalHire — Assistant de Carrière Intelligent & Radar Sourcing</h3>
                     </header>
-                    <p>Développement d'une plateforme SaaS complète permettant d'automatiser la recherche d'emploi et la personnalisation stratégique des candidatures grâce aux Large Language Models (LLMs).</p>
+                    <p>Développement d'une plateforme SaaS avancée permettant d'automatiser la recherche d'emploi et la personnalisation stratégique des candidatures grâce aux Large Language Models (LLMs).</p>
                     
                     <span class="image main"><img src="images/signalhire.png" alt="Dashboard SignalHire - Radar et Scoring IA" /></span>
                     
@@ -101,82 +107,121 @@
                     </ul>
 
                     <p>
-                        <strong>Compétences Mobiles :</strong>
+                        <strong>Compétences Mobilisées :</strong>
                         <code>Python (FastAPI)</code>
                         <code>TypeScript (Next.js)</code>
                         <code>Generative AI (LLMs)</code>
                         <code>Data Aggregation</code>
-                        <code>LaTeX Web Automation</code>
+                        <code>LaTeX Automation</code>
                         <code>Architecture SaaS</code>
                     </p>
                 </article>
 
                 <hr style="margin: 4em 0; border-top: double 4px #eee;">
 
-                <!-- Projet 2 : Étude de Cas Complète (Anciennement Projet 1) -->
+                <!-- PROJET 2 : Threat Intelligence (PROMU & ENRICHI) -->
                 <article>
-                    <h3>Projet 2 : Étude de Cas — De la Reconnaissance à l'Escalade de Privilèges</h3>
-                    <p>Cycle complet de test d'intrusion en environnement isolé, démontrant une maîtrise méthodologique du hacking éthique.</p>
+                    <header>
+                        <span class="project-badge badge-sec">CTI & ELK</span>
+                        <span class="project-badge badge-cloud">Ingénierie Cloud</span>
+                        <span class="project-badge badge-dev">Python API</span>
+                        <h3>Projet 2 : Plateforme de Threat Intelligence et Honeypots (Note: 19/20)</h3>
+                    </header>
+                    <p>Ce projet transforme un leurre passif en une véritable plateforme d'extraction de renseignements proactifs. Il allie ingénierie système complexe et analyse comportementale avancée.</p>
+                    
+                    <span class="image main"><img src="images/projet-honeypot.png" alt="Dashboard Kibana - Threat Intelligence" /></span>
+                    
+                    <div class="row">
+                        <div class="col-6 col-12-medium">
+                            <h4>Ingénierie Système & Cloud</h4>
+                            <p>Déploiement sur <strong>Scaleway</strong> d'une infrastructure Docker hébergeant 20+ honeypots couplés à une pile <strong>ELK (Elasticsearch, Logstash, Kibana)</strong>.</p>
+                            <ul>
+                                <li><strong>Résilience :</strong> Gestion des ressources critiques (OOM Killer, Swap 8Go).</li>
+                                <li><strong>Dépannage :</strong> Restauration de l'accès système via <strong>Mode Rescue</strong> et environnement <code>chroot</code> suite à une corruption SSH.</li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-12-medium">
+                            <h4>Cyber Threat Intelligence (CTI)</h4>
+                            <p>Analyse des sessions interactives via Cowrie pour identifier la méthodologie des attaquants.</p>
+                            <ul>
+                                <li><strong>Matrice MITRE ATT&CK :</strong> Cartographie des TTPs (Discovery, Command & Control).</li>
+                                <li><strong>OSINT :</strong> Corrélation d'adresses IP suspectes via l'API <strong>AbuseIPDB</strong> (score de confiance 100%).</li>
+                                <li><strong>Automatisation :</strong> Script Python d'extraction de rapports d'IOCs interrogeant l'API REST d'Elasticsearch.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p>
+                        <strong>Compétences Mobilisées :</strong>
+                        <code>Big Data (ELK Stack)</code>
+                        <code>MITRE ATT&CK Mapping</code>
+                        <code>Python Scripting</code>
+                        <code>Linux Administration</code>
+                        <code>Cyber Threat Intelligence</code>
+                        <code>Docker Orchestration</code>
+                    </p>
+                </article>
+
+                <hr style="margin: 4em 0; border-top: double 4px #eee;">
+
+                <!-- PROJET 3 : Étude de Cas Pentesting (ANCIENNEMENT P2) -->
+                <article>
+                    <header>
+                        <span class="project-badge badge-sec">Hacking Éthique</span>
+                        <span class="project-badge badge-cloud">Virtualisation</span>
+                        <span class="project-badge badge-sec">Forensics</span>
+                        <h3>Projet 3 : Étude de Cas — De la Reconnaissance à l'Escalade de Privilèges</h3>
+                    </header>
+                    <p>Cycle complet de test d'intrusion en environnement isolé, démontrant une maîtrise méthodologique des étapes de compromission.</p>
                     
                     <span class="image left"><img src="images/labo-cyber.png" alt="Laboratoire Pentesting" /></span>
                     <p>Construction d'un laboratoire sécurisé sous <strong>VirtualBox</strong> (Kali Linux vs Metasploit2) avec isolation réseau totale. Exploitation de vulnérabilités réelles (distcc RCE) et escalade de privilèges via des failles SUID sur Nmap pour obtenir un accès <code>root</code> complet.</p>
                     
                     <div style="clear: both;"></div>
                     <p>
-                        <strong>Compétences :</strong>
+                        <strong>Compétences Mobilisées :</strong>
                         <code>Virtualisation</code>
-                        <code>Nmap</code>
-                        <code>Metasploit</code>
+                        <code>Nmap / Metasploit</code>
+                        <code>Exploitation de Filles</code>
                         <code>Privilege Escalation</code>
-                        <code>Analyse de Vulnérabilités</code>
+                        <code>Ethical Hacking</code>
                     </p>
                 </article>
 
                 <hr />
 
-                <!-- Projet 3 : Threat Intelligence (Anciennement Projet 2) -->
+                <!-- PROJET 4 : Analyse de Logs -->
                 <article>
-                    <h3>Projet 3 : Plateforme de Threat Intelligence et Honeypots (Note: 19/20)</h3>
-                    <p>Transformation de honeypots passifs en outil d'extraction de renseignements proactifs (CTI).</p>
-                    
-                    <span class="image right"><img src="images/projet-honeypot.png" alt="Dashboard Kibana" /></span>
-                    <p>Déploiement cloud (Scaleway) d'une infrastructure <strong>Docker</strong> hébergeant 20+ honeypots couplés à une pile <strong>ELK (Elasticsearch, Kibana)</strong>. Développement d'un outil d'extraction automatisé en <strong>Python</strong> interrogeant les APIs pour identifier les IOCs mondiaux en temps réel.</p>
-                    
-                    <div style="clear: both;"></div>
-                    <p>
-                        <strong>Compétences :</strong>
-                        <code>ELK Stack</code>
-                        <code>Docker</code>
-                        <code>Cloud Administration</code>
-                        <code>Python (REST APIs)</code>
-                        <code>Threat Intelligence</code>
-                    </p>
-                </article>
-
-                <hr />
-
-                <!-- Projet 4 : Analyse de Logs (Anciennement Projet 3) -->
-                <article>
-                    <h3>Projet 4 : Détection d'Anomalies par l'Analyse de Logs Serveur</h3>
-                    <span class="image left"><img src="images/projet-logs.png" alt="Analyse de logs" /></span>
+                    <header>
+                        <span class="project-badge badge-data">Data Science</span>
+                        <span class="project-badge badge-dev">Python Pandas</span>
+                        <span class="project-badge badge-sec">Détection</span>
+                        <h3>Projet 4 : Détection d'Anomalies par l'Analyse de Logs Serveur</h3>
+                    </header>
+                    <span class="image right"><img src="images/projet-logs.png" alt="Analyse de logs" /></span>
                     <p>Application des techniques de <strong>Data Science</strong> (Master MIASHS) pour isoler des comportements malveillants dans des logs Apache massifs. Identification de Brute-Force, scans de vulnérabilités et injections via des scripts <strong>Python (Pandas)</strong> et dataviz synthétique.</p>
                     
                     <div style="clear: both;"></div>
                     <p>
-                        <strong>Compétences :</strong>
-                        <code>Data Science</code>
-                        <code>Pandas</code>
-                        <code>Log Analysis</code>
-                        <code>Incident Detection</code>
+                        <strong>Compétences Mobilisées :</strong>
+                        <code>Data Science Appliquée</code>
+                        <code>Python (Pandas/Matplotlib)</code>
+                        <code>Analyse de Logs Apache</code>
+                        <code>Threat Hunting</code>
                     </p>
                 </article>
 
                 <hr />
 
-                <!-- Projet 5 : CTF (Anciennement Projet 4) -->
+                <!-- PROJET 5 : CTF -->
                 <article>
-                    <h3>Projet 5 : Apprentissage Continu — Root-Me & Challenges CTF</h3>
-                    <p>Engagement quotidien dans la résolution de challenges de sécurité pour maintenir une veille technique active.</p>
+                    <header>
+                        <span class="project-badge badge-sec">Veille Active</span>
+                        <span class="project-badge badge-cloud">Web Security</span>
+                        <span class="project-badge badge-dev">Crypto</span>
+                        <h3>Projet 5 : Apprentissage Continu — Root-Me & Challenges CTF</h3>
+                    </header>
+                    <p>Engagement quotidien dans la résolution de challenges de sécurité pour maintenir une veille technique active sur les dernières vulnérabilités découvertes.</p>
                     <ul class="actions">
                         <li><a href="https://www.root-me.org/islah88" target="_blank" class="button">Voir mon Profil Root-Me</a></li>
                     </ul>
@@ -214,10 +259,8 @@
         <!-- Scripts -->
         <script src="/assets/js/jquery.min.js"></script>
         <script src="/assets/js/jquery.scrollex.min.js"></script>
-        <script src="/assets/js/jquery.scrolly.min.js"></script>
         <script src="/assets/js/browser.min.js"></script>
         <script src="/assets/js/breakpoints.min.js"></script>
-        <script src="/assets/js/util.js"></script>
         <script src="/assets/js/main.js"></script>
 
 </body>
