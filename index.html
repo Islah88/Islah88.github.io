@@ -223,6 +223,26 @@
 	<script src="/assets/js/util.js"></script>
 	<script src="/assets/js/main.js"></script>
 
+    <script>
+        // Gestion du pré-remplissage du formulaire de contact
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const subject = urlParams.get('subject');
+            const messageField = document.getElementById('message');
+
+            if (subject === 'SignalHire' && messageField) {
+                messageField.value = "Bonjour El Islah,\n\nJ'aimerais demander un accès pour tester votre projet SignalHire présenté sur votre portfolio.\n\nMerci !";
+                
+                // Optionnel : Scroller doucement vers le formulaire si le paramètre est présent
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    setTimeout(() => {
+                        contactSection.scrollIntoView({ behavior: 'smooth' });
+                    }, 500);
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
