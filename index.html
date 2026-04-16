@@ -145,8 +145,8 @@
 			<!-- Get Started (Contact) -->
 			<section id="cta" class="main special">
 				<header class="major">
-					<h2>Prêt à Collaborer ?</h2>
-					<p>Intéressé par mon profil pour un stage ou un projet ?<br />
+					<h2 id="contact-title">Prêt à Collaborer ?</h2>
+					<p id="contact-description">Intéressé par mon profil pour un stage ou un projet ?<br />
 						N'hésitez pas à me contacter via le formulaire ci-dessous ou sur LinkedIn.</p>
 				</header>
 				<!-- Formulaire de Contact -->
@@ -229,17 +229,43 @@
             const urlParams = new URLSearchParams(window.location.search);
             const subject = urlParams.get('subject');
             const messageField = document.getElementById('message');
+            const contactTitle = document.getElementById('contact-title');
+            const contactDescription = document.getElementById('contact-description');
+            const contactForm = document.querySelector('#cta form');
+
+            // Sauvegarder les textes originaux pour le reset
+            const originalTitle = contactTitle ? contactTitle.innerText : "";
+            const originalDescription = contactDescription ? contactDescription.innerHTML : "";
 
             if (subject === 'SignalHire' && messageField) {
+                // 1. Pré-remplissage du message
                 messageField.value = "Bonjour El Islah,\n\nJ'aimerais demander un accès pour tester votre projet SignalHire présenté sur votre portfolio.\n\nMerci !";
                 
-                // Optionnel : Scroller doucement vers le formulaire si le paramètre est présent
+                // 2. Personnalisation du titre et de la description
+                if (contactTitle) contactTitle.innerText = "Demande d'accès : SignalHire";
+                if (contactDescription) contactDescription.innerHTML = "Vous souhaitez tester l'outil SignalHire ?<br />Remplissez ce formulaire et je vous donnerai l'accès au dépôt privé avec plaisir.";
+
+                // 3. Nettoyer l'URL pour que le rafraîchissement ne boucle pas
+                if (window.history.replaceState) {
+                    const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + "#contact";
+                    window.history.replaceState({ path: cleanUrl }, '', cleanUrl);
+                }
+
+                // 4. Scroller doucement vers le formulaire
                 const contactSection = document.getElementById('contact');
                 if (contactSection) {
                     setTimeout(() => {
                         contactSection.scrollIntoView({ behavior: 'smooth' });
                     }, 500);
                 }
+            }
+
+            // Remettre à zéro le texte si le formulaire est réinitialisé
+            if (contactForm) {
+                contactForm.addEventListener('reset', () => {
+                    if (contactTitle) contactTitle.innerText = originalTitle;
+                    if (contactDescription) contactDescription.innerHTML = originalDescription;
+                });
             }
         });
     </script>
