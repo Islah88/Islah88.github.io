@@ -267,6 +267,35 @@
                     if (contactTitle) contactTitle.innerText = originalTitle;
                     if (contactDescription) contactDescription.innerHTML = originalDescription;
                 });
+
+                // GESTION DE L'ENVOI AJAX POUR LA REDIRECTION FORCÉE
+                contactForm.addEventListener("submit", function(event) {
+                    event.preventDefault();
+                    const data = new FormData(event.target);
+                    const submitBtn = contactForm.querySelector('input[type="submit"]');
+                    const originalBtnValue = submitBtn.value;
+                    
+                    submitBtn.value = "Transmission...";
+                    submitBtn.disabled = true;
+
+                    fetch(event.target.action, {
+                        method: contactForm.method,
+                        body: data,
+                        headers: { 'Accept': 'application/json' }
+                    }).then(response => {
+                        if (response.ok) {
+                            window.location.href = "success.html";
+                        } else {
+                            alert("Erreur lors de la transmission. Veuillez réessayer.");
+                            submitBtn.value = originalBtnValue;
+                            submitBtn.disabled = false;
+                        }
+                    }).catch(error => {
+                        alert("Erreur réseau : " + error);
+                        submitBtn.value = originalBtnValue;
+                        submitBtn.disabled = false;
+                    });
+                });
             }
         });
     </script>
