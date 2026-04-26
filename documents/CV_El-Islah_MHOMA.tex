@@ -1,0 +1,115 @@
+\documentclass[10pt,a4paper]{article} 
+% --- PACKAGES STANDARDS ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[left=1.2cm,right=1.2cm,top=1cm,bottom=0.8cm]{geometry} 
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage[default]{lato}
+
+% --- COULEURS IDENTITÉ (Thème SaaS / Matrix) ---
+\definecolor{UpClearBlue}{HTML}{0055A4} % Bleu tech corporate
+\definecolor{DarkGrey}{HTML}{2C3E50}
+\definecolor{MatrixGreen}{HTML}{00A36C} % Couleur rappelant l'interface SignalHire
+
+% --- OBLIGATOIRE : ENLÈVE LES NUMÉROS DE PAGE ---
+\pagestyle{empty} 
+
+% --- MÉTADONNÉES DU PDF ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=UpClearBlue,
+    urlcolor=UpClearBlue,
+    pdftitle={CV - EL ISLAH Mhoma - Expert Support IT \& SaaS},
+    pdfauthor={EL ISLAH Mhoma},
+    pdfsubject={Candidature Support IT, SaaS, Automatisation},
+    pdfkeywords={Support IT, SaaS, Automatisation, Python, FastAPI, SignalHire, Management SI}
+}
+
+% --- PERSONNALISATION DES SECTIONS ---
+\titleformat{\section}
+  {\large\bfseries\color{UpClearBlue}} 
+  {}{0em}{\MakeUppercase}
+  [\vspace{-0.3em}\color{UpClearBlue}\titlerule\vspace{0.2em}]
+\titlespacing*{\section}{0pt}{0.4em}{0.2em} 
+
+\begin{document}
+\color{DarkGrey}
+
+% --- HEADER ---
+\begin{center}
+    {\Huge \textbf{EL ISLAH Mhoma}}\\[0.1em] 
+    {\large \textbf{\textcolor{UpClearBlue}{Support IT \& Management SI | Automatisation SaaS \& Déploiement}}}\\[0.2em]
+    \small el.islah.mhoma@gmail.com | 07 85 94 85 44 | \textbf{Disponibilité : Mission / Alternance IT} \\
+    \small LinkedIn : \href{https://linkedin.com/in/el-islah-mhoma/}{linkedin.com/in/el-islah-mhoma} | Portfolio : \href{https://islah88.github.io/}{islah88.github.io} | \textbf{Mobilité : France entière / Télétravail}
+\end{center}
+\vspace{0.1em}
+
+% --- RÉSUMÉ PRO ---
+\section*{Profil \& Objectif}
+Fort d'un profil hybride alliant administration système, support utilisateur et automatisation logicielle, j'optimise les flux techniques des entreprises. Je ne me contente pas de résoudre des incidents (ticketing, réseau, systèmes) ; j'analyse leurs causes profondes pour construire des processus résilients et des outils sur-mesure (Python, IA). Créateur de la plateforme \textbf{SignalHire}, j'ai développé une expertise concrète dans la traduction de besoins complexes en solutions automatisées. Mon objectif : faire gagner du temps à vos équipes et sécuriser votre infrastructure.
+
+% --- PROJET PHARE : SIGNALHIRE ---
+\section*{Réalisation Majeure : Créateur \& Développeur SignalHire}
+\textit{Plateforme SaaS d'automatisation des flux et de scoring intelligent (Projet personnel)} \hfill \textbf{2024 -- Présent}
+\begin{itemize}[leftmargin=1.5em, nosep, topsep=0.1em]
+    \item \textbf{Architecture SaaS \& Systèmes :} Construction d'un backend \textbf{FastAPI} (Python) et d'un frontend \textbf{Next.js} pour la gestion de flux de données.
+    \item \textbf{Automatisation (Agentic AI) :} Implémentation d'un moteur d'analyse automatisé (Gemini/Groq) pour traiter et trier des flux d'informations en temps réel.
+    \item \textbf{Gestion de Données :} Conception d'une base de données relationnelle robuste (SQL) pour le suivi du cycle de vie des données.
+    \item \textbf{Ingénierie Cloud \& Déploiement :} Conteneurisation (Docker) et gestion des pipelines de déploiement en environnement Linux.
+\end{itemize}
+
+% --- EXPÉRIENCES ---
+\section*{Expériences Professionnelles (Administration, Support \& Gestion de Projet)}
+
+\textbf{Administrateur Systèmes \& Support IT} \hfill \textbf{2023 – 2024}\\
+\textit{ANADEN (Agence Nationale) -- Contexte International}
+\begin{itemize}[leftmargin=1.5em, nosep, topsep=0.1em]
+    \item \textbf{Résolution d'Incidents :} Diagnostic de bugs critiques (Niveau 2/3), support utilisateur et collaboration avec les équipes techniques.
+    \item \textbf{Analyse \& Configuration :} Extraction de logs et de données systèmes pour identifier des anomalies de configuration réseaux/serveurs et recommander des optimisations.
+\end{itemize}
+\vspace{0.15em} 
+
+\textbf{Technicien Support IT \& Relation Client} \hfill \textbf{2022 – 2023}\\
+\textit{EDUCANOO -- Déploiement \& Support}
+\begin{itemize}[leftmargin=1.5em, nosep, topsep=0.1em]
+    \item \textbf{Accompagnement Utilisateurs :} Résolution proactive d'incidents techniques, configuration de postes de travail et assistance à distance.
+\end{itemize}
+\vspace{0.15em}
+
+\textbf{Chargé de Projets IT \& Évaluation (QA)} \hfill \textbf{2020 – 2022}\\
+\textit{PNUD (Nations Unies) -- Collaboration Internationale}
+\begin{itemize}[leftmargin=1.5em, nosep, topsep=0.1em]
+    \item \textbf{Contrôle Qualité \& Tests :} Tests de nouvelles fonctionnalités applicatives sur la base de spécifications avant déploiement.
+    \item \textbf{Pilotage \& Reporting :} Création de tableaux de bord interactifs pour le suivi de la performance des projets internationaux.
+    \item \textbf{Environnement Multiculturel :} Rédaction de documentation technique en anglais.
+\end{itemize}
+
+% --- COMPÉTENCES ---
+\section*{Compétences Techniques \& Outils}
+\begin{description}[leftmargin=1.5em, itemsep=0pt, parsep=0pt, topsep=0.1em] 
+    \item[\textbf{Systèmes \& Réseaux :}] Administration Linux (Debian/Ubuntu) et Windows Server, Active Directory, GLPI, Pare-feux.
+    \item[\textbf{Automatisation \& Cloud :}] \textbf{Python} (Scripting, FastAPI), Bash/PowerShell, \textbf{Docker}, Git, Scaleway.
+    \item[\textbf{Bases de Données :}] \textbf{SQL Expert} (PostgreSQL, SQLite), Traitement de logs (ELK Stack), PowerBI.
+    \item[\textbf{Méthodologies :}] Gestion de projet Agile, Résolution de problèmes (ITIL), Cyber Threat Intelligence (Bases).
+\end{description}
+
+% --- FORMATION ---
+\section*{Formation \& Diplômes}
+\vspace{0.35em}
+\textbf{Bachelor Informatique \& Systèmes d'Information} (Bac+3)\hfill \textbf{En cours}\\ESAIP Le Havre  
+\vspace{0.35em}
+
+\textbf{Master 2 Math-Info / MIASHS} (Data Science, Algorithmique)\hfill \textbf{2019} \\Université de Fianarantsoa
+% --- LANGUES ---
+\section*{Certifications \& Langues}
+\begin{itemize}[leftmargin=1.5em, nosep, topsep=0.1em]
+    \item \textbf{Certifications :} Google AI Data Analytics (2021).
+    \item \textbf{Anglais :} Opérationnel (B2 -- Score TOEIC : 700/900).
+    \item \textbf{Français :} Bilingue.
+\end{itemize}
+
+\end{document}
