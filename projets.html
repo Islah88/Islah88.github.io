@@ -71,6 +71,57 @@
                 <p>Voici une sélection de mes travaux les plus aboutis, démontrant ma capacité à concevoir des outils métier (SaaS), à gérer des infrastructures Cloud et à automatiser des tâches complexes.</p>
                 <hr />
 
+                <!-- PROJET 0 : NexusGuard AI (STAR PROJECT) -->
+                <article>
+                    <header>
+                        <span class="project-badge badge-sec">SecDevOps</span>
+                        <span class="project-badge badge-ai">Graph RAG</span>
+                        <span class="project-badge badge-dev">Neo4j</span>
+                        <span class="project-badge badge-data">Gemini AI</span>
+                        <span class="project-badge badge-cloud">Knowledge Graph</span>
+                        <h3>Projet Phare : NexusGuard AI — Agent SecDevOps Autonome par Graphe de Connaissances</h3>
+                    </header>
+                    <p>Développement d'un agent de sécurité intelligent qui <strong>comprend le contexte métier</strong> d'une équipe de développement. Contrairement aux outils classiques (SonarQube, Snyk) qui scannent le code avec des règles statiques, NexusGuard AI interroge un <strong>Knowledge Graph (Neo4j)</strong> pour retrouver les tickets Jira, les politiques de conformité et l'historique des développeurs avant de générer son verdict.</p>
+                    
+                    <span class="image main"><img src="images/nexusguard.png" alt="NexusGuard AI - Dashboard SecDevOps avec Knowledge Graph" /></span>
+                    
+                    <div class="row">
+                        <div class="col-6 col-12-medium">
+                            <h4>Architecture Graph RAG</h4>
+                            <ul>
+                                <li><strong>Knowledge Graph (Neo4j) :</strong> 26 nœuds (Développeurs, Tickets, Fichiers, Vulnérabilités, Politiques) et 34 relations modélisant l'écosystème socio-technique.</li>
+                                <li><strong>Moteur Graph RAG Custom :</strong> Traduction automatique de questions en requêtes Cypher via Gemini, sans LangChain (architecture légère et maîtrisée).</li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-12-medium">
+                            <h4>Agent SecDevOps Autonome</h4>
+                            <ul>
+                                <li><strong>Analyse Contextuelle :</strong> L'IA parcourt le graphe pour retrouver les exigences de sécurité du ticket Jira associé au code soumis.</li>
+                                <li><strong>Auto-Remédiation :</strong> Génération automatique de patchs de code corrigés (ex: JWT HS256 + expiration 15min) en cas de non-conformité.</li>
+                                <li><strong>Stack :</strong> Python, FastAPI, Neo4j (Docker), Gemini 2.5 Flash, Next.js, TailwindCSS.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <ul class="actions">
+                        <li><a href="https://github.com/Islah88/NexusGuard-AI" target="_blank" class="button">Voir le Code Source (GitHub)</a></li>
+                    </ul>
+
+                    <p>
+                        <strong>Compétences Mobilisées :</strong>
+                        <code>Knowledge Graph (Neo4j)</code>
+                        <code>Graph RAG</code>
+                        <code>Gemini AI</code>
+                        <code>SecDevOps</code>
+                        <code>FastAPI</code>
+                        <code>Cypher Query Language</code>
+                        <code>Next.js</code>
+                        <code>Docker</code>
+                    </p>
+                </article>
+
+                <hr style="margin: 4em 0; border-top: double 4px #eee;">
+
                 <!-- PROJET 1 : NovaBuild AI -->
                 <article>
                     <header>
