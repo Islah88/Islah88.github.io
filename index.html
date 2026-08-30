@@ -18,6 +18,33 @@
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css?v=14" />
 	</noscript>
+
+	<style>
+		/* Six chiffres au lieu des cinq prevus par le template : on autorise le retour a la ligne */
+		#preuves .statistics {
+			flex-wrap: wrap;
+		}
+
+		#preuves .statistics li {
+			flex: 1 1 28%;
+			min-width: 13em;
+			margin-bottom: 10px;
+		}
+
+		#preuves .statistics li .source {
+			display: block;
+			margin-top: 0.75em;
+			font-size: 0.7em;
+			line-height: 1.5;
+			letter-spacing: 0;
+		}
+
+		#parcours-frise {
+			max-width: 46em;
+			margin: 0 auto 2em auto;
+			text-align: left;
+		}
+	</style>
 </head>
 
 <body class="is-preload">
@@ -37,6 +64,7 @@
 		<nav id="nav">
 			<ul>
 				<li><a href="#intro" class="active">Introduction</a></li>
+				<li><a href="#preuves">Preuves</a></li>
 				<li><a href="#first">Compétences</a></li>
 				<li><a href="#second">Parcours</a></li>
 				<li><a href="#cta">Contact</a></li>
@@ -51,20 +79,58 @@
 				<div class="spotlight">
 					<div class="content">
 						<header class="major">
-							<h2>Bienvenue</h2>
+							<h2>Je conçois des systèmes d'IA qui tournent vraiment — pas des démonstrateurs.</h2>
 						</header>
-						<p>L'informatique ne doit pas être un frein, mais un accélérateur de productivité. Avec mon profil hybride alliant <strong>administration système</strong>, <strong>support utilisateur</strong> et <strong>automatisation logicielle</strong>, j'optimise les flux techniques des entreprises. Je ne me contente pas de résoudre des incidents (ticketing, réseau, systèmes) ; j'analyse leurs causes profondes pour construire des processus résilients et des outils sur-mesure (Python, IA).<br/><br/>
-							<strong>Mon objectif : Faire gagner du temps à vos équipes et sécuriser votre infrastructure.</strong></p>
-						<!-- Bouton CORRIGÉ : pointe vers la page projets.html -->
+						<p>Trois systèmes d'IA générative en production, conçus seul. Le dernier, développé en 13 semaines chez <strong>VINCI Construction</strong>, lit des dossiers d'appel d'offres de plusieurs centaines de pages et pré-remplit automatiquement les fiches d'analyse des ingénieurs, en citant sa source pour chaque information. Le tout <strong>100 % en local</strong> : aucune donnée ne quitte le poste.</p>
+						<p>Ma conviction tient en une phrase : <strong>un modèle qui ne sait pas doit le dire</strong>. Le risque dominant n'est pas de manquer une information, c'est d'en retenir une fausse.</p>
 						<ul class="actions">
-							<li><a href="projets.html" class="button">Découvrir mes projets</a></li>
-							<li><a href="documents/CV_El-Islah_MHOMA.pdf" class="button primary" download>Télécharger
-									mon CV</a></li>
-
+							<li><a href="projets.html" class="button primary">Voir mes réalisations</a></li>
+							<li><a href="documents/CV_El-Islah_MHOMA.pdf" class="button" download>Télécharger mon
+									CV</a></li>
 						</ul>
 					</div>
 					<span class="image"><img src="images/profile.jpg" alt="Photo de profil de El Islah Mhoma" /></span>
 				</div>
+			</section>
+
+			<!-- Preuves chiffrées -->
+			<section id="preuves" class="main special">
+				<header class="major">
+					<h2>Des preuves, pas des promesses</h2>
+					<p>Chaque chiffre porte sa provenance. Un chiffre sans source est un chiffre suspect.</p>
+				</header>
+				<ul class="statistics">
+					<li class="style1">
+						<span class="icon solid fa-code"></span>
+						<strong>34 400</strong> lignes de code en production
+						<span class="source">Projet SCALPEL — VINCI Construction</span>
+					</li>
+					<li class="style2">
+						<span class="icon solid fa-check-double"></span>
+						<strong>131</strong> tests automatisés
+						<span class="source">Projet SCALPEL — VINCI Construction</span>
+					</li>
+					<li class="style3">
+						<span class="icon solid fa-rocket"></span>
+						<strong>3</strong> systèmes d'IA en production
+						<span class="source">VINCI · mission freelance · SignalHire</span>
+					</li>
+					<li class="style4">
+						<span class="icon solid fa-rss"></span>
+						<strong>53</strong> sources traitées en autonomie
+						<span class="source">Agent de veille — mission freelance</span>
+					</li>
+					<li class="style5">
+						<span class="icon solid fa-euro-sign"></span>
+						<strong>&lt; 35 €</strong> de coût d'API mensuel
+						<span class="source">Agent de veille — mesuré par ledger temps réel</span>
+					</li>
+					<li class="style1">
+						<span class="icon solid fa-sitemap"></span>
+						<strong>10</strong> décisions d'architecture documentées
+						<span class="source">Projet SCALPEL — ADR versionnés</span>
+					</li>
+				</ul>
 			</section>
 
 			<!-- First Section (Compétences) -->
@@ -74,19 +140,24 @@
 				</header>
 				<ul class="features">
 					<li>
-						<span class="icon solid major style1 fa-server"></span>
-						<h3>Support IT & Systèmes</h3>
-						<p>Administration Windows/Linux, Gestion d'incidents (GLPI), Support N1/N2, Déploiement d'architectures sécurisées, Gestion des accès (Active Directory), Résolution de pannes complexes et réseaux.</p>
+						<span class="icon solid major style1 fa-robot"></span>
+						<h3>IA générative &amp; agents autonomes</h3>
+						<p>LLM (Llama 3.1 en local, GPT-4o, Claude, Mistral), RAG (embeddings, recherche hybride Dense + BM25, pgvector), agents autonomes et multi-agents, LangGraph / LangChain / CrewAI / MCP, prompt engineering.</p>
 					</li>
 					<li>
-						<span class="icon solid major style3 fa-robot"></span>
-						<h3>Automatisation & Ingénierie SaaS</h3>
-						<p>Développement d'outils internes (Python, FastAPI, Next.js), Intégration d'APIs, Intelligence Artificielle (Agentic AI, LLMs), Scripting Bash/PowerShell pour éliminer les tâches chronophages.</p>
+						<span class="icon solid major style2 fa-shield-alt"></span>
+						<h3>Sécurisation &amp; évaluation des LLM</h3>
+						<p>Garde-fous en 5 couches, anti-injection de prompt, ancrage vérifié &gt; 85 %, politique d'abstention motivée, durcissement OWASP LLM Top 10, redteaming, déploiement air-gap. Savoir attaquer un LLM, pas seulement le brancher.</p>
 					</li>
 					<li>
-						<span class="icon solid major style5 fa-project-diagram"></span>
-						<h3>Management SI & Pilotage</h3>
-						<p>Gestion de projets IT, Analyse des flux techniques, Création de documentation technique, Communication transverse, Pilotage d'infrastructures Cloud (Scaleway, Docker).</p>
+						<span class="icon solid major style3 fa-code"></span>
+						<h3>Développement &amp; industrialisation</h3>
+						<p>Python / FastAPI (34 400 lignes, 131 tests), TypeScript / React / Next.js, PostgreSQL, Docker, Git, CI/CD, Cursor et Claude Code au quotidien.</p>
+					</li>
+					<li>
+						<span class="icon solid major style5 fa-server"></span>
+						<h3>Infrastructure &amp; pilotage</h3>
+						<p>Windows / Linux, VMware, réseaux (CCNA), sauvegarde et PRA, SIEM ; encadrement d'équipe et gestion de projet.</p>
 					</li>
 				</ul>
 				<!-- Footer de la section supprimé car redondant -->
@@ -96,31 +167,24 @@
 			<section id="second" class="main special">
 				<header class="major">
 					<h2>Mon Parcours</h2>
-					<p>Un profil robuste mêlant l'exigence analytique de la Data à plus de 4 ans d'expérience terrain en administration système, support IT et gestion de projets.</p>
+					<p>De la conduite d'infrastructures critiques à la conception de systèmes d'IA en production.</p>
 				</header>
-				<ul class="statistics">
-					<li class="style1">
-						<span class="icon solid fa-user-graduate"></span>
-						<strong>Master 2 & Bac+3</strong> Sécurité IT
-					</li>
-					<li class="style2">
-						<span class="icon solid fa-laptop-code"></span>
-						<strong>+4 ans</strong> Exp. Tech
-					</li>
-					<li class="style3">
-						<span class="icon solid fa-folder-open"></span>
-						<strong>+ 5</strong> Projets Perso
-					</li>
-					<li class="style4">
-						<span class="icon solid fa-language"></span>
-						<strong>3</strong> Langues
-					</li>
-					<li class="style5">
-						<span class="icon solid fa-rocket"></span>
-						<strong>Disponible</strong> CDI / Mission IT
-					</li>
+				<ul class="alt" id="parcours-frise">
+					<li><strong>2026 — Ingénieur IA</strong>, Sogea Caroni / VINCI Construction (13 semaines) —
+						projet SCALPEL, copilote RAG souverain. Mémoire soutenu.</li>
+					<li><strong>2026 — Tech Lead IA</strong>, cabinet de conseil (mission freelance, 6 mois) —
+						agent de veille autonome multi-LLM.</li>
+					<li><strong>2022–2024 — Responsable de Département Infrastructures</strong>, ANADEN —
+						équipe de 7, 9 serveurs déployés dont 6 pour une banque centrale.</li>
+					<li><strong>2020–2022 — Chargé de projets IT</strong>, PNUD (Nations Unies) —
+						coordination internationale.</li>
 				</ul>
-				<p class="content">De mon récent rôle d'Ingénieur IA chez VINCI Construction à ma mission de veille stratégique pour E3 Executive Search, en passant par la supervision d'infrastructures IT chez ANADEN, j'ai développé une solide capacité à résoudre des problèmes techniques et organisationnels. Mon Master en Mathématiques et Informatique ainsi que mon récent Bachelor en Administration d'Infrastructures Sécurisées (ESAIP) m'ont doté d'un esprit analytique rigoureux que j'applique au diagnostic de pannes complexes, tandis que ma passion pour l'automatisation me pousse à concevoir des outils intelligents pour soulager les équipes opérationnelles.</p>
+				<p class="content">Formation : Master en Mathématiques et Informatique, et Bachelor en Administration
+					d'Infrastructures Sécurisées (ESAIP). Cette double culture — rigueur analytique et exigence
+					opérationnelle — est ce qui me permet de concevoir des systèmes d'IA qui survivent au passage en
+					production.</p>
+				<p class="content"><strong>Disponible immédiatement — CDI ou contrat de professionnalisation.</strong>
+				</p>
 				<!-- Footer de la section supprimé car redondant -->
 			</section>
 
@@ -128,8 +192,9 @@
 			<section id="cta" class="main special">
 				<header class="major">
 					<h2 id="contact-title">Prêt à Collaborer ?</h2>
-					<p id="contact-description">Intéressé par mon profil pour un stage ou un projet ?<br />
-						N'hésitez pas à me contacter via le formulaire ci-dessous ou sur LinkedIn.</p>
+					<p id="contact-description">Un poste d'Ingénieur IA / LLMOps à pourvoir, en CDI ou en contrat de
+						professionnalisation ?<br />
+						Écrivez-moi via le formulaire ci-dessous ou sur LinkedIn.</p>
 				</header>
 				<!-- Formulaire de Contact -->
 				<footer class="major">
