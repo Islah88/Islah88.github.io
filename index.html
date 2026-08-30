@@ -285,13 +285,50 @@
             const originalTitle = contactTitle ? contactTitle.innerText : "";
             const originalDescription = contactDescription ? contactDescription.innerHTML : "";
 
-            if (subject === 'SignalHire' && messageField) {
+            // Un sujet par fiche projet : ajouter une entree ici suffit a brancher un nouveau bouton
+            // "En savoir plus" pointant vers index.html?subject=<cle>#contact
+            const SUJETS = {
+                SCALPEL: {
+                    titre: "Échanger sur le projet SCALPEL",
+                    description: "Le copilote RAG souverain développé chez VINCI Construction vous intéresse ?<br />Décrivez votre besoin : je réponds avec ce que la confidentialité m'autorise à partager.",
+                    message: "Bonjour El Islah,\n\nJ'ai lu l'étude de cas SCALPEL sur votre portfolio et j'aimerais en discuter avec vous.\n\nMerci !"
+                },
+                AgentVeille: {
+                    titre: "Échanger sur l'agent de veille autonome",
+                    description: "Un agent qui tourne seul deux fois par jour sur 53 sources, pour moins de 35 € d'API par mois.<br />Dites-moi ce que vous cherchez à automatiser.",
+                    message: "Bonjour El Islah,\n\nJ'aimerais en savoir plus sur l'agent de veille autonome présenté sur votre portfolio.\n\nMerci !"
+                },
+                SignalHire: {
+                    titre: "Échanger sur SignalHire",
+                    description: "Vous souhaitez une présentation de SignalHire ou un accès de test ?<br />Remplissez ce formulaire et je reviens vers vous rapidement.",
+                    message: "Bonjour El Islah,\n\nJ'aimerais en savoir plus sur votre projet SignalHire présenté sur votre portfolio.\n\nMerci !"
+                },
+                ShieldFlow: {
+                    titre: "Échanger sur ShieldFlow",
+                    description: "La génération automatisée du registre RGPD article 30 vous intéresse ?<br />Écrivez-moi, le code source est public.",
+                    message: "Bonjour El Islah,\n\nJ'aimerais en savoir plus sur votre projet ShieldFlow présenté sur votre portfolio.\n\nMerci !"
+                },
+                SentinelOps: {
+                    titre: "Échanger sur SentinelOps",
+                    description: "La planification d'agents sous contraintes légales et le suivi CNAPS vous intéressent ?<br />Écrivez-moi, le code source est public.",
+                    message: "Bonjour El Islah,\n\nJ'aimerais en savoir plus sur votre projet SentinelOps présenté sur votre portfolio.\n\nMerci !"
+                },
+                ELK: {
+                    titre: "Échanger sur l'infrastructure de détection ELK",
+                    description: "La centralisation de logs, les honeypots et la cartographie MITRE ATT&CK vous intéressent ?<br />Écrivez-moi.",
+                    message: "Bonjour El Islah,\n\nJ'aimerais en savoir plus sur votre projet d'infrastructure de détection ELK + Honeypot.\n\nMerci !"
+                }
+            };
+
+            const sujetConfig = subject ? SUJETS[subject] : null;
+
+            if (sujetConfig && messageField) {
                 // 1. Pré-remplissage du message
-                messageField.value = "Bonjour El Islah,\n\nJ'aimerais demander un accès pour tester votre projet SignalHire présenté sur votre portfolio.\n\nMerci !";
-                
+                messageField.value = sujetConfig.message;
+
                 // 2. Personnalisation du titre et de la description
-                if (contactTitle) contactTitle.innerText = "Demande d'accès : SignalHire";
-                if (contactDescription) contactDescription.innerHTML = "Vous souhaitez tester l'outil SignalHire ?<br />Remplissez ce formulaire et je vous donnerai l'accès au dépôt privé avec plaisir.";
+                if (contactTitle) contactTitle.innerText = sujetConfig.titre;
+                if (contactDescription) contactDescription.innerHTML = sujetConfig.description;
 
                 // 3. Nettoyer l'URL pour que le rafraîchissement ne boucle pas
                 if (window.history.replaceState) {

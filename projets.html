@@ -41,80 +41,29 @@
         .badge-data { background: #ff8c0015; color: #ff8c00; border: 1px solid #ff8c0050; }
         .badge-cloud { background: #00e5ff15; color: #00e5ff; border: 1px solid #00e5ff50; }
 
-        /* Custom Carousel */
-        .custom-carousel {
-            position: relative;
-            max-width: 100%;
+        /* Mise en avant de la these du projet : besoin non couvert par le template */
+        blockquote.thesis {
             margin: 2em 0;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 1em 1.5em;
+            border-left: 4px solid #008cff;
+            background: rgba(0, 140, 255, 0.06);
+            font-size: 1.1em;
+            font-style: italic;
         }
-        .carousel-inner {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
+
+        /* Etapes de l'etude de cas : un intertitre discret, pas un nouveau composant */
+        .case-step {
+            margin-bottom: 0.4em;
+            font-size: 0.8em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #008cff;
         }
-        .carousel-item {
-            min-width: 100%;
-            box-sizing: border-box;
-        }
-        .carousel-item img {
-            width: 100%;
-            vertical-align: middle;
-            border-radius: 8px;
-        }
-        .carousel-control {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: 44px;
-            height: 44px;
-            margin-top: -22px;
-            color: white;
-            font-weight: bold;
-            font-size: 20px;
-            transition: all 0.3s ease;
-            border-radius: 50%;
-            user-select: none;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-        .carousel-control.prev {
-            left: 15px;
-        }
-        .carousel-control.next {
-            right: 15px;
-        }
-        .carousel-control:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.1);
-        }
-        .carousel-indicators {
-            text-align: center;
-            position: absolute;
-            bottom: 15px;
-            width: 100%;
-            z-index: 2;
-        }
-        .dot {
-            cursor: pointer;
-            height: 10px;
-            width: 10px;
-            margin: 0 4px;
-            background-color: rgba(255,255,255,0.5);
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-        }
-        .active-dot, .dot:hover {
-            background-color: #fff;
+
+        .confidentialite {
+            font-size: 0.9em;
+            opacity: 0.75;
         }
     </style>
 </head>
@@ -128,8 +77,8 @@
 
         <!-- Header -->
         <header id="header">
-            <h1>Mes Projets</h1>
-            <p>Démonstration de mon savoir-faire en Automatisation, Administration Système et Ingénierie.</p>
+            <h1>Mes Réalisations</h1>
+            <p>Trois systèmes d'IA générative en production, et les prototypes qui m'ont servi de terrain d'essai.</p>
         </header>
 
         <!-- Nav -->
@@ -144,456 +93,297 @@
 
             <!-- Content -->
             <section id="content" class="main">
-                <p>Voici une sélection de mes travaux les plus aboutis, démontrant ma capacité à concevoir des outils métier (SaaS), à gérer des infrastructures Cloud et à automatiser des tâches complexes.</p>
+                <p>Le premier bloc est une étude de cas approfondie : c'est le projet sur lequel je souhaite être jugé.
+                    Les suivants sont des fiches courtes, au même format — contexte, ce que ça fait, chiffres, stack.</p>
                 <hr />
 
-                <!-- PROJET PRO 1 : VINCI Construction -->
+                <!-- ÉTUDE DE CAS : SCALPEL (VINCI Construction) -->
                 <article>
                     <header>
-                        <span class="project-badge badge-ai">GenAI / RAG</span>
-                        <span class="project-badge badge-dev">FastAPI</span>
-                        <span class="project-badge badge-sec">Sécurité On-Premise</span>
-                        <span class="project-badge badge-data">PostgreSQL (pgvector)</span>
-                        <h3>Stage Ingénieur : Plateforme RAG d'Entreprise (VINCI Construction)</h3>
+                        <span class="project-badge badge-ai">RAG souverain</span>
+                        <span class="project-badge badge-sec">Air-gap · 100 % local</span>
+                        <span class="project-badge badge-dev">Python · FastAPI</span>
+                        <span class="project-badge badge-data">9 formats · 23 champs</span>
+                        <h3>Étude de cas — SCALPEL : un copilote RAG souverain pour les Études de Prix
+                            (VINCI Construction)</h3>
                     </header>
-                    <p>Conception et développement de bout en bout d'une plateforme d'Intelligence Artificielle générative sécurisée (on-premise) pour la Direction des Études de Prix de Sogea Caroni (VINCI Construction).</p>
-                    
-                    <div class="row">
-                        <div class="col-6 col-12-medium">
-                            <h4>Architecture RAG & Multi-Agents</h4>
-                            <ul>
-                                <li><strong>Ingestion Documentaire :</strong> Pipeline de traitement de documents hétérogènes (PDF, Excel, DWG) et vectorisation via <strong>pgvector</strong>.</li>
-                                <li><strong>Orchestration Multi-Modèles :</strong> Cascade souverain/cloud avec <strong>Azure OpenAI, Mistral AI et Ollama</strong> local pour garantir la confidentialité des données.</li>
-                            </ul>
-                        </div>
-                        <div class="col-6 col-12-medium">
-                            <h4>Industrialisation & Qualité</h4>
-                            <ul>
-                                <li><strong>Robustesse :</strong> Backend en <strong>FastAPI</strong>, architecture microservices, déploiement <strong>Docker Compose</strong> et monitoring via <strong>Langfuse</strong>.</li>
-                                <li><strong>Sécurité :</strong> Application stricte de l'<strong>OWASP LLM Top 10</strong> et cloisonnement des données sensibles.</li>
-                            </ul>
-                        </div>
-                    </div>
+
+                    <p class="case-step">Le contexte</p>
+                    <p>Sogea Caroni (VINCI Construction), service Études de Prix, Roubaix. 13 semaines, développeur
+                        unique. Sujet de mémoire : <em>« Architecture et sécurisation d'un RAG souverain pour les
+                            Études de Prix BTP »</em>, soutenu en août 2026.</p>
+
+                    <p class="case-step">Le problème</p>
+                    <p>Répondre à un appel d'offres commence par lire : une liasse de plusieurs centaines de pages —
+                        PDF textuels et scannés, Word, classeurs Excel anciens, plans — sans nommage ni format
+                        normalisés. C'est l'étape la plus longue et la plus sensible, car tout le chiffrage en dépend.
+                    </p>
+
+                    <p class="case-step">La contrainte structurante</p>
+                    <p>Confidentialité totale : <strong>aucune donnée ne peut sortir du poste</strong>. Modèle, index et
+                        moteur de recherche tournent en local. Contrainte aggravée par un proxy filtrant d'entreprise
+                        bloquant les dépôts publics, et par un poste sans droits administrateur.</p>
+
+                    <p class="case-step">La solution</p>
+                    <p>Pipeline d'ingestion <strong>9 formats</strong> (PDF, Word, Excel, OCR sur scans, RTF, DXF/CAO,
+                        IFC/BIM) → RAG local (Llama 3.1 8B, embeddings MiniLM sur CPU, recherche hybride Dense + BM25) →
+                        extraction structurée de <strong>23 champs</strong> → pré-remplissage automatique des documents
+                        métier, <strong>avec citation de la source pour chaque valeur</strong>.</p>
+
+                    <blockquote class="thesis">Le risque dominant n'est pas de manquer une information, c'est d'en
+                        retenir une fausse.</blockquote>
+
+                    <p class="case-step">Les garde-fous</p>
+                    <p>De cette thèse découle une cascade de <strong>5 couches</strong> : nettoyage → anti-injection de
+                        prompt → vérification d'ancrage &gt; 85 % → quarantaine → post-validation par règles métier.
+                        Et des <strong>statuts d'abstention motivés</strong> plutôt que des scores de confiance :
+                        l'outil répond « indéterminé » plutôt que d'inventer un prix.</p>
+
+                    <p class="case-step">La sécurité</p>
+                    <p>Analyse et durcissement face aux menaces <strong>OWASP LLM Top 10</strong>, tests adversariaux,
+                        gouvernance formalisée en <strong>10 ADR</strong>.</p>
+
+                    <p class="case-step">Les preuves</p>
+                    <p>34 400 lignes · 131 tests · 176 commits · 46 branches · 71 modules · 10 ADR ·
+                        20+ leçons formalisées · 15+ arbitrages métier consignés.</p>
+
+                    <p class="case-step">Ce que j'en retiens</p>
+                    <ul>
+                        <li>Mesurer avant d'affirmer — et accepter que ses propres mesures soient parfois fausses.</li>
+                        <li>Écrire la règle métier le jour où l'expert la donne, pas trois semaines après.</li>
+                        <li>Construire pour que le travail survive à celui qui l'a fait.</li>
+                    </ul>
 
                     <p>
-                        <strong>Compétences Mobilisées :</strong>
-                        <code>RAG (Retrieval-Augmented Generation)</code>
-                        <code>LangGraph</code>
-                        <code>FastAPI</code>
-                        <code>pgvector</code>
-                        <code>Mistral AI / Azure OpenAI</code>
-                        <code>Docker</code>
+                        <strong>Stack :</strong>
+                        <code>Llama 3.1 8B (local)</code>
+                        <code>RAG hybride Dense + BM25</code>
+                        <code>Embeddings MiniLM (CPU)</code>
+                        <code>Python / FastAPI</code>
+                        <code>OCR</code>
+                        <code>OWASP LLM Top 10</code>
                     </p>
+
+                    <p class="confidentialite">Confidentialité : le niveau de détail publié ici est celui déjà rendu
+                        public. Aucun extrait de dossier de consultation, nom de chantier, montant ou nom de fichier
+                        client n'apparaît sur cette page.</p>
+
+                    <ul class="actions">
+                        <li><a href="index.html?subject=SCALPEL#contact" class="button primary">Échanger sur ce
+                                projet</a></li>
+                    </ul>
                 </article>
 
                 <hr style="margin: 4em 0; border-top: double 4px #eee;">
 
-                <!-- PROJET PRO 2 : E3 Radar -->
+                <!-- FICHE : Agent de veille autonome -->
                 <article>
                     <header>
-                        <span class="project-badge badge-dev">Python (3200+ lignes)</span>
-                        <span class="project-badge badge-ai">Multi-LLM</span>
-                        <span class="project-badge badge-data">Web Scraping</span>
-                        <span class="project-badge badge-cloud">Automatisation API</span>
-                        <h3>Mission Freelance : Pipeline IA de Veille Marché (E3 Radar)</h3>
+                        <span class="project-badge badge-ai">Agent autonome</span>
+                        <span class="project-badge badge-dev">Cascade multi-LLM</span>
+                        <span class="project-badge badge-data">53 sources</span>
+                        <span class="project-badge badge-cloud">CRON · production</span>
+                        <h3>Agent de veille autonome — mission freelance (cabinet de conseil)</h3>
                     </header>
-                    <p>Mission freelance livrée en production pour E3 Executive Search : développement d'un pipeline d'automatisation IA capable de surveiller activement 199 entreprises industrielles via le scraping d'ATS et l'agrégation de flux RSS.</p>
-                    
-                    <div class="row">
-                        <div class="col-6 col-12-medium">
-                            <h4>Acquisition & Filtrage IA</h4>
-                            <ul>
-                                <li><strong>Sourcing Automatisé :</strong> Scraping multi-ATS (Workday API, SuccessFactors) et plus de 40 flux RSS en temps réel.</li>
-                                <li><strong>Filtrage Intelligent :</strong> Triage initial via <strong>GPT-4o-mini</strong> et synthèse approfondie via <strong>Claude Sonnet</strong>.</li>
-                            </ul>
-                        </div>
-                        <div class="col-6 col-12-medium">
-                            <h4>Performance & Déploiement</h4>
-                            <ul>
-                                <li><strong>Intégration API :</strong> Publication automatique des résultats structurés directement dans <strong>ClickUp</strong>.</li>
-                                <li><strong>Code Coverage & CI/CD :</strong> Plus de 112 tests automatisés, architecture fiable déployée sous <strong>Railway</strong> avec un budget opérationnel maîtrisé (&lt; 20€/mois).</li>
-                            </ul>
-                        </div>
-                    </div>
-
+                    <p><strong>Contexte.</strong> Mission freelance pour un cabinet de conseil (client confidentiel),
+                        livrée en production. Un agent qui tourne sans surveillance humaine.</p>
+                    <p><strong>Ce que ça fait.</strong> Deux exécutions par jour : agrégation de 53 sources →
+                        déduplication → qualification par cascade <strong>GPT-4o-mini</strong> puis
+                        <strong>Claude Sonnet</strong> uniquement sur les signaux retenus → injection des fiches
+                        structurées dans le CRM du client. Le bon modèle, pas le plus gros.</p>
+                    <p><strong>Chiffres.</strong> 53 sources · 2 exécutions/jour · 146 commits ·
+                        coût d'API &lt; 35 €/mois, mesuré par un ledger temps réel.</p>
                     <p>
-                        <strong>Compétences Mobilisées :</strong>
+                        <strong>Stack :</strong>
                         <code>Python</code>
-                        <code>Web Scraping</code>
-                        <code>Claude 3.5 Sonnet / GPT-4o-mini</code>
-                        <code>ClickUp API</code>
-                        <code>Railway</code>
-                        <code>Tests Automatisés (Pytest)</code>
+                        <code>GPT-4o-mini</code>
+                        <code>Claude Sonnet</code>
+                        <code>RSS / scraping</code>
+                        <code>API CRM</code>
+                        <code>Pytest</code>
                     </p>
+                    <ul class="actions">
+                        <li><a href="index.html?subject=AgentVeille#contact" class="button">En savoir plus</a></li>
+                    </ul>
                 </article>
 
                 <hr style="margin: 4em 0; border-top: double 4px #eee;">
 
-                <!-- PROJET 0 : ShieldFlow (STAR PROJECT) -->
+                <!-- FICHE : SignalHire -->
                 <article>
                     <header>
-                        <span class="project-badge badge-sec">Cybersécurité</span>
-                        <span class="project-badge badge-ai">Gemini AI</span>
-                        <span class="project-badge badge-dev">Full-Stack SaaS</span>
-                        <span class="project-badge badge-data">RGPD / Compliance</span>
-                        <h3>Projet Phare : ShieldFlow — Conformité RGPD Automatisée par IA</h3>
+                        <span class="project-badge badge-ai">Scoring sémantique</span>
+                        <span class="project-badge badge-dev">FastAPI · Next.js</span>
+                        <span class="project-badge badge-data">PostgreSQL</span>
+                        <span class="project-badge badge-cloud">Code public</span>
+                        <h3>SignalHire — plateforme SaaS d'agents et de scoring IA</h3>
                     </header>
-                    <p>Plateforme SaaS qui <strong>scanne automatiquement</strong> les bases de données d'une entreprise, détecte les données personnelles sensibles (noms, emails, n° de sécurité sociale), et <strong>génère le registre des traitements</strong> conforme au RGPD Art. 30 — le tout propulsé par un agent Gemini AI.</p>
-
-                    <span class="image main"><img src="images/demo-shieldflow.gif" alt="ShieldFlow Démo Animée" /></span>
-
-                    <div class="row">
-                        <div class="col-6 col-12-medium">
-                            <h4>Moteur de Conformité IA</h4>
-                            <ul>
-                                <li><strong>Scan Automatique :</strong> Upload CSV ou connexion à une base de données, analyse IA des colonnes et détection des données personnelles par catégorie de sensibilité.</li>
-                                <li><strong>Score de Conformité :</strong> Jauge temps réel 0-100 décomposée en 4 axes : Inventaire des données, Base légale, Sécurité technique, Droits des personnes.</li>
-                            </ul>
-                        </div>
-                        <div class="col-6 col-12-medium">
-                            <h4>Architecture & Design</h4>
-                            <ul>
-                                <li><strong>Registre Art. 30 :</strong> Génération automatique des fiches de traitement avec badges de conformité et recommandations IA correctives.</li>
-                                <li><strong>Design Glassmorphism :</strong> Interface dark premium (Cyan → Violet), animations Framer Motion, responsive mobile.</li>
-                                <li><strong>Stack :</strong> Python, FastAPI, SQLAlchemy, Next.js 16, TypeScript, Tailwind CSS v4, Gemini AI.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <ul class="actions">
-                        <li><a href="https://github.com/Islah88/ShieldFlow-RGPD-AI" target="_blank" class="button">Voir le Code Source (GitHub)</a></li>
-                    </ul>
-
+                    <p><strong>Contexte.</strong> Projet personnel mené de bout en bout, code source public.</p>
+                    <p><strong>Ce que ça fait.</strong> Collecte multi-API, scoring sémantique de compatibilité
+                        <strong>avec justification</strong> (pas seulement une note), rotation de clés d'API avec
+                        bascule automatique sur quota saturé, worker autonome, alertes et tableaux de bord.</p>
+                    <p><strong>Chiffres.</strong> 5 sources d'offres agrégées · worker en exécution continue ·
+                        génération documentaire automatisée en LaTeX.</p>
                     <p>
-                        <strong>Compétences Mobilisées :</strong>
-                        <code>RGPD / Compliance</code>
-                        <code>Gemini AI</code>
-                        <code>FastAPI</code>
-                        <code>Next.js 16</code>
-                        <code>TypeScript</code>
-                        <code>JWT Auth</code>
-                        <code>SQLAlchemy</code>
-                        <code>Glassmorphism UI</code>
-                    </p>
-                </article>
-
-                <hr style="margin: 4em 0; border-top: double 4px #eee;">
-
-                <!-- PROJET 1 : NexusGuard AI -->
-                <article>
-                    <header>
-                        <span class="project-badge badge-sec">SecDevOps</span>
-                        <span class="project-badge badge-ai">Graph RAG</span>
-                        <span class="project-badge badge-dev">Neo4j</span>
-                        <span class="project-badge badge-data">Gemini AI</span>
-                        <span class="project-badge badge-cloud">Knowledge Graph</span>
-                        <h3>Projet 1 : NexusGuard AI — Agent SecDevOps Autonome par Graphe de Connaissances</h3>
-                    </header>
-                    <p>Développement d'un agent de sécurité intelligent qui <strong>comprend le contexte métier</strong> d'une équipe de développement. Contrairement aux outils classiques (SonarQube, Snyk) qui scannent le code avec des règles statiques, NexusGuard AI interroge un <strong>Knowledge Graph (Neo4j)</strong> pour retrouver les tickets Jira, les politiques de conformité et l'historique des développeurs avant de générer son verdict.</p>
-                    
-                    <span class="image main"><img src="images/nexusguard.gif" alt="NexusGuard AI - Démo Agent SecDevOps" /></span>
-                    
-                    <div class="row">
-                        <div class="col-6 col-12-medium">
-                            <h4>Architecture Graph RAG</h4>
-                            <ul>
-                                <li><strong>Knowledge Graph (Neo4j) :</strong> 26 nœuds (Développeurs, Tickets, Fichiers, Vulnérabilités, Politiques) et 34 relations modélisant l'écosystème socio-technique.</li>
-                                <li><strong>Moteur Graph RAG Custom :</strong> Traduction automatique de questions en requêtes Cypher via Gemini, sans LangChain (architecture légère et maîtrisée).</li>
-                            </ul>
-                        </div>
-                        <div class="col-6 col-12-medium">
-                            <h4>Agent SecDevOps Autonome</h4>
-                            <ul>
-                                <li><strong>Analyse Contextuelle :</strong> L'IA parcourt le graphe pour retrouver les exigences de sécurité du ticket Jira associé au code soumis.</li>
-                                <li><strong>Auto-Remédiation :</strong> Génération automatique de patchs de code corrigés (ex: JWT HS256 + expiration 15min) en cas de non-conformité.</li>
-                                <li><strong>Stack :</strong> Python, FastAPI, Neo4j (Docker), Gemini 2.5 Flash, Next.js, TailwindCSS.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <ul class="actions">
-                        <li><a href="https://github.com/Islah88/NexusGuard-AI" target="_blank" class="button">Voir le Code Source (GitHub)</a></li>
-                    </ul>
-
-                    <p>
-                        <strong>Compétences Mobilisées :</strong>
-                        <code>Knowledge Graph (Neo4j)</code>
-                        <code>Graph RAG</code>
-                        <code>Gemini AI</code>
-                        <code>SecDevOps</code>
-                        <code>FastAPI</code>
-                        <code>Cypher Query Language</code>
-                        <code>Next.js</code>
+                        <strong>Stack :</strong>
+                        <code>Python / FastAPI</code>
+                        <code>TypeScript / Next.js</code>
+                        <code>PostgreSQL</code>
+                        <code>Gemini / Groq</code>
                         <code>Docker</code>
                     </p>
+                    <ul class="actions">
+                        <li><a href="https://github.com/Islah88/SignalHire" target="_blank" rel="noopener"
+                                class="button">Voir le code source</a></li>
+                        <li><a href="index.html?subject=SignalHire#contact" class="button">En savoir plus</a></li>
+                    </ul>
                 </article>
 
                 <hr style="margin: 4em 0; border-top: double 4px #eee;">
 
-                <!-- PROJET 2 : SentinelOps — Sécurité Privée par IA -->
+                <!-- FICHE : ShieldFlow -->
                 <article>
                     <header>
-                        <span class="project-badge badge-sec">Sécurité Privée</span>
-                        <span class="project-badge badge-ai">Gemini AI</span>
-                        <span class="project-badge badge-dev">Full-Stack SaaS</span>
-                        <span class="project-badge badge-cloud">CNAPS / Réglementation</span>
-                        <h3>Projet 2 : SentinelOps — Gestion de Sécurité Privée par IA</h3>
+                        <span class="project-badge badge-ai">Agent Gemini</span>
+                        <span class="project-badge badge-sec">RGPD · Art. 30</span>
+                        <span class="project-badge badge-dev">FastAPI · Next.js</span>
+                        <span class="project-badge badge-cloud">Code public</span>
+                        <h3>ShieldFlow — conformité RGPD automatisée par IA</h3>
                     </header>
-                    <p>Plateforme SaaS complète de gestion pour les sociétés de sécurité privée : <strong>planning des agents optimisé par IA</strong> (contraintes légales, repos, qualifications), suivi des <strong>cartes CNAPS</strong>, et structuration automatique des <strong>rapports d'incidents</strong>.</p>
-
-                    <span class="image main"><img src="images/sentinelops.gif" alt="SentinelOps Démo Animée" /></span>
-
-                    <div class="row">
-                        <div class="col-6 col-12-medium">
-                            <h4>Intelligence de Planification</h4>
-                            <ul>
-                                <li><strong>Planning IA :</strong> Génération automatique des vacations en respectant les repos légaux, les qualifications requises (SSIAP, SST, cynophile) et la validité des cartes CNAPS.</li>
-                                <li><strong>Gestion des Agents :</strong> Fiches complètes avec statut CNAPS dynamique (valide/expire bientôt/expirée), qualifications et taux horaire.</li>
-                            </ul>
-                        </div>
-                        <div class="col-6 col-12-medium">
-                            <h4>Incidents & Conformité</h4>
-                            <ul>
-                                <li><strong>Rapports d'Incidents :</strong> L'agent signale un incident en texte brut, l'IA le structure automatiquement (type, lieu, heure, gravité, mesures prises).</li>
-                                <li><strong>Conformité CNAPS :</strong> Tableau de bord de suivi avec KPIs d'expiration, alertes de renouvellement et taux de conformité global.</li>
-                                <li><strong>Stack :</strong> Python, FastAPI, Next.js 16, TypeScript, Tailwind CSS v4, Gemini AI.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <ul class="actions">
-                        <li><a href="https://github.com/Islah88/SentinelOps-Security-AI" target="_blank" class="button">Voir le Code Source (GitHub)</a></li>
-                    </ul>
-
+                    <p><strong>Contexte.</strong> Projet personnel, code source public.</p>
+                    <p><strong>Ce que ça fait.</strong> Scanne une base de données ou un fichier CSV, détecte les
+                        données personnelles par catégorie de sensibilité, puis génère le registre des traitements
+                        conforme à l'article 30 du RGPD avec recommandations correctives.</p>
+                    <p><strong>Chiffres.</strong> Score de conformité 0-100 décomposé en 4 axes : inventaire, base
+                        légale, sécurité technique, droits des personnes.</p>
                     <p>
-                        <strong>Compétences Mobilisées :</strong>
-                        <code>Sécurité Privée (CNAPS)</code>
-                        <code>Gemini AI</code>
-                        <code>FastAPI</code>
-                        <code>Next.js 16</code>
-                        <code>TypeScript</code>
-                        <code>Planning IA</code>
-                        <code>JWT Auth</code>
-                        <code>Responsive Design</code>
+                        <strong>Stack :</strong>
+                        <code>Python / FastAPI</code>
+                        <code>SQLAlchemy</code>
+                        <code>Next.js / TypeScript</code>
+                        <code>Gemini</code>
                     </p>
+                    <ul class="actions">
+                        <li><a href="https://github.com/Islah88/ShieldFlow-RGPD-AI" target="_blank" rel="noopener"
+                                class="button">Voir le code source</a></li>
+                        <li><a href="index.html?subject=ShieldFlow#contact" class="button">En savoir plus</a></li>
+                    </ul>
                 </article>
 
                 <hr style="margin: 4em 0; border-top: double 4px #eee;">
 
-                <!-- PROJET 3 : NovaBuild AI -->
+                <!-- FICHE : SentinelOps -->
                 <article>
                     <header>
-                        <span class="project-badge badge-ai">Agentic AI</span>
-                        <span class="project-badge badge-data">LangGraph</span>
-                        <span class="project-badge badge-dev">CrewAI</span>
-                        <span class="project-badge badge-cloud">BTP / Enterprise</span>
-                        <span class="project-badge badge-sec">AI Safety</span>
-                        <h3>Projet 3 : NovaBuild AI — Système d'Orchestration Multi-Agents</h3>
+                        <span class="project-badge badge-ai">Planification IA</span>
+                        <span class="project-badge badge-sec">CNAPS</span>
+                        <span class="project-badge badge-dev">FastAPI · Next.js</span>
+                        <span class="project-badge badge-cloud">Code public</span>
+                        <h3>SentinelOps — gestion de sécurité privée assistée par IA</h3>
                     </header>
-                    <p>Développement d'un système intelligent "Enterprise-Ready" démontrant des capacités de raisonnement avancé pour le secteur de la construction. Ce projet utilise une architecture multi-agents complexe pour analyser, chiffrer et débattre des choix techniques, éliminant ainsi les hallucinations des LLMs classiques.</p>
-                    
-                    <span class="image main"><img src="images/novabuild.gif" alt="NovaBuild AI Démo Animée" /></span>
-                    
+                    <p><strong>Contexte.</strong> Projet personnel, code source public.</p>
+                    <p><strong>Ce que ça fait.</strong> Génère les plannings d'agents en respectant les repos légaux,
+                        les qualifications requises et la validité des cartes CNAPS ; structure automatiquement les
+                        rapports d'incidents rédigés en texte libre.</p>
+                    <p><strong>Chiffres.</strong> Suivi de conformité CNAPS avec alertes d'expiration et taux de
+                        conformité global.</p>
+                    <p>
+                        <strong>Stack :</strong>
+                        <code>Python / FastAPI</code>
+                        <code>Next.js / TypeScript</code>
+                        <code>Gemini</code>
+                    </p>
+                    <ul class="actions">
+                        <li><a href="https://github.com/Islah88/SentinelOps-Security-AI" target="_blank" rel="noopener"
+                                class="button">Voir le code source</a></li>
+                        <li><a href="index.html?subject=SentinelOps#contact" class="button">En savoir plus</a></li>
+                    </ul>
+                </article>
+
+                <hr style="margin: 4em 0; border-top: double 4px #eee;">
+
+                <!-- FICHE : ELK + Honeypot -->
+                <article>
+                    <header>
+                        <span class="project-badge badge-sec">SIEM · Détection</span>
+                        <span class="project-badge badge-cloud">Docker · Scaleway</span>
+                        <span class="project-badge badge-dev">Python</span>
+                        <h3>ELK + Honeypot — infrastructure de détection d'intrusion (noté 19/20)</h3>
+                    </header>
+                    <p><strong>Contexte.</strong> Projet académique d'administration système et de sécurité,
+                        <strong>noté 19/20</strong>.</p>
+                    <p><strong>Ce que ça fait.</strong> Centralise les logs de 20+ honeypots dans une pile ELK,
+                        détecte et cartographie les méthodes d'attaque (matrice MITRE ATT&amp;CK), et corrèle les
+                        adresses IP suspectes via l'API AbuseIPDB.</p>
+                    <p><strong>Chiffres.</strong> 20+ honeypots · extraction automatisée d'IOC par script Python
+                        interrogeant l'API REST d'Elasticsearch.</p>
+                    <p>
+                        <strong>Stack :</strong>
+                        <code>Elasticsearch / Logstash / Kibana</code>
+                        <code>Docker</code>
+                        <code>Linux</code>
+                        <code>Python</code>
+                        <code>MITRE ATT&amp;CK</code>
+                    </p>
+                    <span class="image main"><img src="images/projet-honeypot.png"
+                            alt="Tableau de bord Kibana de détection d'intrusion" /></span>
+                    <ul class="actions">
+                        <li><a href="index.html?subject=ELK#contact" class="button">En savoir plus</a></li>
+                    </ul>
+                </article>
+
+                <hr style="margin: 4em 0; border-top: double 4px #eee;">
+
+                <!-- BLOC COMPACT : prototypes agentiques -->
+                <article>
+                    <header>
+                        <span class="project-badge badge-ai">Prototypes</span>
+                        <span class="project-badge badge-dev">LangGraph · CrewAI · n8n</span>
+                        <h3>Prototypes agentiques — mon terrain d'essai</h3>
+                    </header>
+                    <p>Ces prototypes ne sont pas en production. Ils m'ont servi à éprouver des architectures avant de
+                        les engager sur un projet réel — notamment les garde-fous anti-hallucination réutilisés dans
+                        SCALPEL.</p>
+
                     <div class="row">
-                        <div class="col-6 col-12-medium">
-                            <h4>Architecture Multi-Agents</h4>
-                            <ul>
-                                <li><strong>LangGraph :</strong> Routage dynamique de l'information et exécution d'outils (Calculator Tool, VectorDB Tool).</li>
-                                <li><strong>CrewAI :</strong> Débat contradictoire entre un Agent Ingénieur et un Agent Commercial pour garantir la fiabilité du devis.</li>
+                        <div class="col-4 col-12-medium">
+                            <h4>NovaBuild</h4>
+                            <p>Orchestration multi-agents LangGraph + CrewAI, avec débat contradictoire entre un agent
+                                ingénieur et un agent commercial, et garde-fou forçant le recours à un outil de calcul
+                                externe pour tout prix.</p>
+                            <ul class="actions">
+                                <li><a href="https://github.com/Islah88/Agentic-AI-Pricing-NovaBuild" target="_blank"
+                                        rel="noopener" class="button small">Code</a></li>
                             </ul>
                         </div>
-                        <div class="col-6 col-12-medium">
-                            <h4>Robustesse & Intégration</h4>
-                            <ul>
-                                <li><strong>Prévention des Hallucinations :</strong> Forçage de l'utilisation d'outils externes pour les calculs mathématiques et la recherche de prix (RAG).</li>
-                                <li><strong>Sécurité "By Design" :</strong> Prévention des Injections de Prompt (Data Poisoning) et architecture Human-in-the-Loop (HITL).</li>
-                                <li><strong>Stack Moderne :</strong> Python, FastAPI (Backend) et Next.js (Frontend).</li>
+                        <div class="col-4 col-12-medium">
+                            <h4>NexusGuard</h4>
+                            <p>Agent SecDevOps interrogeant un graphe de connaissances Neo4j (26 nœuds, 34 relations)
+                                traduit en Cypher par Gemini, pour générer des correctifs de code contextualisés.</p>
+                            <ul class="actions">
+                                <li><a href="https://github.com/Islah88/NexusGuard-AI" target="_blank" rel="noopener"
+                                        class="button small">Code</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-4 col-12-medium">
+                            <h4>OptiFlux</h4>
+                            <p>Automatisation d'administration des ventes : webhook n8n simulé en FastAPI,
+                                classification et routage des demandes, sortie JSON stricte via Pydantic.</p>
+                            <ul class="actions">
+                                <li><a href="https://github.com/Islah88/AI-CRM-Automation-OptiFlux" target="_blank"
+                                        rel="noopener" class="button small">Code</a></li>
                             </ul>
                         </div>
                     </div>
 
-                    <ul class="actions">
-                        <li><a href="https://github.com/Islah88/Agentic-AI-Pricing-NovaBuild" target="_blank" class="button">Voir le Code Source (GitHub)</a></li>
-                    </ul>
-
                     <p>
-                        <strong>Compétences Mobilisées :</strong>
+                        <strong>Stack :</strong>
                         <code>LangGraph</code>
                         <code>CrewAI</code>
-                        <code>Llama-3 / Groq</code>
-                        <code>Agentic Workflows</code>
-                        <code>RAG</code>
-                        <code>FastAPI</code>
-                        <code>Prompt Injection Defense</code>
-                    </p>
-                </article>
-
-                <hr style="margin: 4em 0; border-top: double 4px #eee;">
-
-                <!-- PROJET 2 : OptiFlux CRM -->
-                <article>
-                    <header>
-                        <span class="project-badge badge-data">Automatisation n8n</span>
-                        <span class="project-badge badge-ai">IA Générative</span>
-                        <span class="project-badge badge-dev">FastAPI</span>
-                        <span class="project-badge badge-sec">SecDevOps</span>
-                        <h3>Projet 4 : OptiFlux CRM — Automatisation ADV & Routage Intelligent</h3>
-                    </header>
-                    <p>Preuve de concept (PoC) d'une automatisation d'Administration des Ventes (ADV). Ce projet simule un webhook n8n capable d'intercepter des requêtes clients entrantes et de les traiter de manière autonome via l'IA avant insertion dans le CRM.</p>
-                    
-                    <span class="image main"><img src="images/optiflux.gif" alt="OptiFlux CRM Démo Animée" /></span>
-                    
-                    <div class="row">
-                        <div class="col-6 col-12-medium">
-                            <h4>Pipeline d'Automatisation</h4>
-                            <ul>
-                                <li><strong>Simulation Webhook n8n :</strong> Point d'entrée FastAPI écoutant les flux de données entrants.</li>
-                                <li><strong>Structured Output (Pydantic) :</strong> Forçage du modèle IA à renvoyer un JSON strict pour l'intégration CRM.</li>
-                                <li><strong>AI Safety & SecDevOps :</strong> Couche de sanitarisation contre le Data Poisoning et Rate Limiting (anti-DDoS).</li>
-                            </ul>
-                        </div>
-                        <div class="col-6 col-12-medium">
-                            <h4>Traitement Intelligent</h4>
-                            <ul>
-                                <li><strong>Classification Llama-3 :</strong> Identification du client, de l'intention et de l'urgence de la requête.</li>
-                                <li><strong>Génération de Brouillon :</strong> Rédaction automatique de la réponse et attribution du bon routage (ex: Service Réclamations).</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <ul class="actions">
-                        <li><a href="https://github.com/Islah88/AI-CRM-Automation-OptiFlux" target="_blank" class="button">Voir le Code Source (GitHub)</a></li>
-                    </ul>
-
-                    <p>
-                        <strong>Compétences Mobilisées :</strong>
-                        <code>n8n Automation</code>
-                        <code>Structured Data (Pydantic)</code>
-                        <code>Python (FastAPI)</code>
-                        <code>Llama-3</code>
-                        <code>Next.js</code>
-                        <code>SecDevOps</code>
-                    </p>
-                </article>
-
-                <hr style="margin: 4em 0; border-top: double 4px #eee;">
-
-                <!-- PROJET 3 : SignalHire -->
-                <article>
-                    <header>
-                        <span class="project-badge badge-ai">Intelligence Artificielle</span>
-                        <span class="project-badge badge-dev">Outil Métier SaaS</span>
-                        <span class="project-badge badge-data">Automatisation</span>
-                        <span class="project-badge badge-sec">Infra Sécurisée</span>
-                        <h3>Projet 5 : SignalHire — Assistant de Sourcing & Automatisation des Processus</h3>
-                    </header>
-                    <p>Développement de A à Z d'une plateforme SaaS autonome. Cet outil illustre ma capacité à identifier un problème de productivité chronophage et à concevoir une solution technique robuste pour l'automatiser de bout en bout grâce à l'Agentic AI.</p>
-                    
-                    <span class="image main"><img src="images/signalhire.gif" alt="SignalHire Démo Animée" /></span>
-                    
-                    <div class="row">
-                        <div class="col-6 col-12-medium">
-                            <h4>Piliers Technologiques</h4>
-                            <ul>
-                                <li><strong>Radar Sourcing :</strong> Agrégation d'offres en temps réel via APIs (LinkedIn, France Travail, Google Jobs, Welcome to the Jungle, Adzuna).</li>
-                                <li><strong>Scoring Prédictif :</strong> Analyse sémantique de compatibilité entre offres et CV Maitre via <strong>Gemini et Groq</strong>.</li>
-                                <li><strong>Automatisation LaTeX :</strong> Génération dynamique de CV et lettre de motivation qui matchent avec l'offre et optimisés pour les ATS.</li>
-                            </ul>
-                        </div>
-                        <div class="col-6 col-12-medium">
-                            <h4>Architecture & Robustesse</h4>
-                            <ul>
-                                <li><strong>Tiers de Fallback :</strong> Système de rotation de clés API et bascule autonome en cas de saturation des quotas LLM.</li>
-                                <li><strong>Sécurité d'Infrastructure :</strong> Isolation par conteneurs (Docker), protection API (Rate Limiting) et gestion sécurisée des secrets.</li>
-                                <li><strong>Stack Moderne :</strong> Backend <strong>FastAPI</strong>, Frontend <strong>Next.js</strong> et base de données SQLite versionnée.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <ul class="actions">
-                        <li><a href="https://github.com/Islah88/SignalHire" target="_blank" class="button">Voir le Code Source (GitHub)</a></li>
-                    </ul>
-
-                    <p>
-                        <strong>Compétences Mobilisées :</strong>
-                        <code>Python (FastAPI)</code>
-                        <code>TypeScript (Next.js)</code>
-                        <code>Generative AI (LLMs)</code>
-                        <code>Data Aggregation</code>
-                        <code>LaTeX Automation</code>
-                        <code>Architecture SaaS</code>
-                        <code>ITIL & Security</code>
-                    </p>
-                </article>
-
-                <hr style="margin: 4em 0; border-top: double 4px #eee;">
-
-                <!-- PROJET 4 : Threat Intelligence (PROMU & ENRICHI) -->
-                <article>
-                    <header>
-                        <span class="project-badge badge-cloud">Ingénierie Cloud</span>
-                        <span class="project-badge badge-sec">Sécurité & ELK</span>
-                        <span class="project-badge badge-dev">Scripting Python</span>
-                        <h3>Projet 6 : Déploiement d'une Infrastructure Cloud & Plateforme ELK (Note: 19/20)</h3>
-                    </header>
-                    <p>Ce projet illustre ma maîtrise de l'administration système Linux en environnement Cloud. Il allie ingénierie de la résilience, conteneurisation et gestion de données massives.</p>
-                    
-                    <span class="image main"><img src="images/projet-honeypot.png" alt="Dashboard Kibana - Threat Intelligence" /></span>
-                    
-                    <div class="row">
-                        <div class="col-6 col-12-medium">
-                            <h4>Ingénierie Système & Cloud</h4>
-                            <p>Déploiement sur <strong>Scaleway</strong> d'une infrastructure Docker hébergeant 20+ honeypots couplés à une pile <strong>ELK (Elasticsearch, Logstash, Kibana)</strong>.</p>
-                            <ul>
-                                <li><strong>Résilience :</strong> Gestion des ressources critiques (OOM Killer, Swap 8Go).</li>
-                                <li><strong>Dépannage :</strong> Restauration de l'accès système via <strong>Mode Rescue</strong> et environnement <code>chroot</code> suite à une corruption SSH.</li>
-                            </ul>
-                        </div>
-                        <div class="col-6 col-12-medium">
-                            <h4>Cyber Threat Intelligence (CTI)</h4>
-                            <p>Analyse des sessions interactives via Cowrie pour identifier la méthodologie des attaquants.</p>
-                            <ul>
-                                <li><strong>Matrice MITRE ATT&CK :</strong> Cartographie des TTPs (Discovery, Command & Control).</li>
-                                <li><strong>OSINT :</strong> Corrélation d'adresses IP suspectes via l'API <strong>AbuseIPDB</strong> (score de confiance 100%).</li>
-                                <li><strong>Automatisation :</strong> Script Python d'extraction de rapports d'IOCs interrogeant l'API REST d'Elasticsearch.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <p>
-                        <strong>Compétences Mobilisées :</strong>
-                        <code>Big Data (ELK Stack)</code>
-                        <code>MITRE ATT&CK Mapping</code>
-                        <code>Python Scripting</code>
-                        <code>Linux Administration</code>
-                        <code>Cyber Threat Intelligence</code>
-                        <code>Docker Orchestration</code>
-                    </p>
-                </article>
-
-                <hr style="margin: 4em 0; border-top: double 4px #eee;">
-
-                <!-- PROJET 5 : Étude de Cas Pentesting (ANCIENNEMENT P2) -->
-                <article>
-                    <header>
-                        <span class="project-badge badge-cloud">Virtualisation & Réseau</span>
-                        <span class="project-badge badge-sec">Diagnostic</span>
-                        <span class="project-badge badge-sec">Sécurité Systèmes</span>
-                        <h3>Projet 7 : Audit Technique & Résolution de Vulnérabilités Systèmes</h3>
-                    </header>
-                    <p>Construction et audit d'un laboratoire de machines virtuelles interconnectées, prouvant ma compréhension approfondie des réseaux, des systèmes d'exploitation et de leur sécurisation.</p>
-                    
-                    <span class="image left"><img src="images/labo-cyber.png" alt="Laboratoire Pentesting" /></span>
-                    <p>Mise en place d'une infrastructure réseau sous <strong>VirtualBox</strong> avec isolation stricte. Diagnostic approfondi des configurations erronées (failles de droits SUID, services obsolètes) et exploitation encadrée pour comprendre la logique des attaquants, afin de mieux blinder les serveurs en production.</p>
-                    
-                    <div style="clear: both;"></div>
-                    <p>
-                        <strong>Compétences Mobilisées :</strong>
-                        <code>Virtualisation</code>
-                        <code>Nmap / Metasploit</code>
-                        <code>Exploitation de Filles</code>
-                        <code>Privilege Escalation</code>
-                        <code>Ethical Hacking</code>
+                        <code>Neo4j / Cypher</code>
+                        <code>Gemini</code>
+                        <code>Pydantic</code>
+                        <code>n8n</code>
                     </p>
                 </article>
 
@@ -604,7 +394,8 @@
                 <footer id="footer">
                     <section>
                         <h2>Prêt à Collaborer ?</h2>
-                        <p>Intéressé par mon profil ? Contactez-moi pour discuter d'opportunités de stage ou de collaboration.</p>
+                        <p>Un poste d'Ingénieur IA / LLMOps à pourvoir, en CDI ou en contrat de professionnalisation ?
+                            Écrivez-moi.</p>
                         <ul class="actions">
                             <li><a href="index.html#contact" class="button">Me Contacter</a></li>
                         </ul>
@@ -618,8 +409,10 @@
                             <dd><a href="mailto:el.islah.mhoma@gmail.com">el.islah.mhoma@gmail.com</a></dd>
                         </dl>
                         <ul class="icons">
-                            <li><a href="https://www.linkedin.com/in/el-islah-mhoma/" target="_blank" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
-                            <li><a href="https://github.com/Islah88" target="_blank" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+                            <li><a href="https://www.linkedin.com/in/el-islah-mhoma/" target="_blank" rel="noopener"
+                                    class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
+                            <li><a href="https://github.com/Islah88" target="_blank" rel="noopener"
+                                    class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
                         </ul>
                     </section>
                 </footer>
@@ -632,48 +425,6 @@
         <script src="/assets/js/browser.min.js"></script>
         <script src="/assets/js/breakpoints.min.js"></script>
         <script src="/assets/js/main.js"></script>
-
-        <script>
-            // Logique du Carousel Custom
-            function moveSlide(btn, n) {
-                let carousel = btn.closest('.custom-carousel');
-                let inner = carousel.querySelector('.carousel-inner');
-                let items = carousel.querySelectorAll('.carousel-item');
-                let dots = carousel.querySelectorAll('.dot');
-                
-                let currentIndex = Array.from(dots).findIndex(d => d.classList.contains('active-dot'));
-                if (currentIndex === -1) currentIndex = 0;
-                
-                let newIndex = currentIndex + n;
-                if (newIndex >= items.length) newIndex = 0;
-                if (newIndex < 0) newIndex = items.length - 1;
-                
-                inner.style.transform = `translateX(-${newIndex * 100}%)`;
-                
-                dots.forEach(d => d.classList.remove('active-dot'));
-                if(dots[newIndex]) dots[newIndex].classList.add('active-dot');
-            }
-
-            function currentSlide(dot, n) {
-                let carousel = dot.closest('.custom-carousel');
-                let inner = carousel.querySelector('.carousel-inner');
-                let dots = carousel.querySelectorAll('.dot');
-                
-                let newIndex = n - 1;
-                inner.style.transform = `translateX(-${newIndex * 100}%)`;
-                
-                dots.forEach(d => d.classList.remove('active-dot'));
-                dot.classList.add('active-dot');
-            }
-
-            // Initialisation de tous les carousels au chargement
-            document.addEventListener('DOMContentLoaded', () => {
-                document.querySelectorAll('.custom-carousel').forEach(c => {
-                    let dots = c.querySelectorAll('.dot');
-                    if(dots.length > 0) dots[0].classList.add('active-dot');
-                });
-            });
-        </script>
 </body>
 
 </html>
