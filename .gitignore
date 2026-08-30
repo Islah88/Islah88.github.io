@@ -1,0 +1,12 @@
+# Residus de compilation LaTeX (les CV sont versionnes en .tex et .pdf uniquement)
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# Systeme
+Thumbs.db
+Desktop.ini
+.DS_Store
