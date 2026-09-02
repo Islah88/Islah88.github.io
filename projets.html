@@ -19,7 +19,7 @@
     <meta property="og:locale" content="fr_FR" />
     <meta property="og:title" content="Réalisations — El Islah Mhoma, Ingénieur IA / LLMOps" />
     <meta property="og:description"
-        content="Étude de cas SCALPEL : copilote RAG souverain 100 % local chez VINCI Construction — 34 400 lignes, 131 tests, 10 ADR. Et un agent de veille autonome à moins de 35 € d'API par mois." />
+        content="Étude de cas SCALPEL : copilote RAG souverain 100 % local chez VINCI Construction — 34 400 lignes, 131 tests, 10 ADR. Et un agent de veille autonome exploité 33 jours, 2,94 € d'API mesurés en juillet." />
     <meta property="og:image" content="https://islah88.github.io/images/og-preview.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -202,21 +202,32 @@
                     <header>
                         <span class="project-badge badge-ai">Agent autonome</span>
                         <span class="project-badge badge-dev">Cascade multi-LLM</span>
-                        <span class="project-badge badge-data">53 sources</span>
-                        <span class="project-badge badge-cloud">CRON · production</span>
+                        <span class="project-badge badge-data">88 sources</span>
+                        <span class="project-badge badge-cloud">Docker · CRON · production</span>
                         <h3>Agent de veille autonome — mission freelance (cabinet de conseil)</h3>
                     </header>
                     <p><strong>Contexte.</strong> Mission freelance pour un cabinet de conseil (client confidentiel),
                         livrée en production. Un agent qui tourne sans surveillance humaine.</p>
-                    <p><strong>Ce que ça fait.</strong> Deux exécutions par jour : agrégation de 53 sources →
+                    <p><strong>Ce que ça fait.</strong> Deux exécutions par jour : agrégation de 88 sources →
                         déduplication → qualification par cascade <strong>GPT-4o-mini</strong> puis
                         <strong>Claude Sonnet</strong> uniquement sur les signaux retenus → injection des fiches
                         structurées dans le CRM du client. Le bon modèle, pas le plus gros.</p>
-                    <p><strong>Chiffres.</strong> 53 sources · 2 exécutions/jour · 146 commits ·
-                        coût d'API &lt; 35 €/mois, mesuré par un ledger temps réel.</p>
+                    <p><strong>Exploitation en production.</strong> Agent LLM autonome, conteneurisé (Docker) et
+                        planifié par cron managé : <strong>2 exécutions/jour</strong>,
+                        <strong>33 jours</strong> d'autonomie, <strong>~64 runs</strong>
+                        <em>(ordre de grandeur)</em>, zéro intervention humaine. Suivi de coût au token :
+                        <strong>2,94&nbsp;€</strong> d'API en juillet pour un plafond de
+                        <strong>35&nbsp;€</strong> (ordre de grandeur ~7–8&nbsp;€ tout compris).
+                        Résilience : retry/backoff, circuit breaker à 3 échecs, kill-switches, garde de quota.
+                        <strong>11 incidents</strong> diagnostiqués, dont un arrêt de 3 jours résolu par
+                        <strong>revert prouvé octet par octet</strong>.</p>
+                    <p><strong>Chiffres.</strong> 88 sources · 2 exécutions/jour · 33 jours d'autonomie ·
+                        ~64 runs (ordre de grandeur) · 183 commits · 432 tests (ratio 1,18) ·
+                        2,94&nbsp;€ d'API mesurés en juillet (plafond 35&nbsp;€).</p>
                     <p>
                         <strong>Stack :</strong>
                         <code>Python</code>
+                        <code>Docker</code>
                         <code>GPT-4o-mini</code>
                         <code>Claude Sonnet</code>
                         <code>RSS / scraping</code>
